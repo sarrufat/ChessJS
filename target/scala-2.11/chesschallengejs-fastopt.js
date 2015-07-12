@@ -17039,7 +17039,7 @@ $c_Lchess_webapp_ChessController$.prototype.calculate__V = (function() {
     var x1 = (i === $uI(array["length"]));
     if (x1) {
       var array$1 = v1["alerts"];
-      var elem = new $c_Lchess_webapp_Alert().init___T__T("warning", "You must select some piece");
+      var elem = new $c_Lchess_webapp_Alert().init___T__T("warning", "You must select one or more pieces");
       array$1["push"](elem)
     } else if ((!x1)) {
       $m_Lchess_webapp_ChessController$().chess$webapp$ChessController$$internalCalc__V()

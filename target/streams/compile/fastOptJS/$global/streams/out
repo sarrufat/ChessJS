@@ -1,17 +1,17 @@
 [0m[[0minfo[0m] [0mFast optimizing C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\scala-2.11\chesschallengejs-fastopt.js[0m
-[0m[[0mdebug[0m] [0mLinker: Read info: 280366 us[0m
-[0m[[0mdebug[0m] [0mLinker: Compute reachability: 486507 us[0m
-[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 2451533 us[0m
+[0m[[0mdebug[0m] [0mLinker: Read info: 257358 us[0m
+[0m[[0mdebug[0m] [0mLinker: Compute reachability: 347710 us[0m
+[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 2713638 us[0m
 [0m[[0mdebug[0m] [0mLinker: cache stats: reused: 0 -- invalidated: 3926 -- trees read: 581[0m
-[0m[[0mdebug[0m] [0mLinker: 3242564 us[0m
+[0m[[0mdebug[0m] [0mLinker: 3353414 us[0m
 [0m[[0mdebug[0m] [0mInc. optimizer: Batch mode: true[0m
-[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 416117 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 819334 us[0m
 [0m[[0mdebug[0m] [0mInc. optimizer: Optimizing 4260 methods.[0m
-[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 3295308 us[0m
-[0m[[0mdebug[0m] [0mInc. optimizer: 3745136 us[0m
-[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 112666 us[0m
-[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 30416 us[0m
-[0m[[0mdebug[0m] [0mRefiner: 144925 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 2720586 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: 3592182 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 173745 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 31064 us[0m
+[0m[[0mdebug[0m] [0mRefiner: 206842 us[0m
 [0m[[0mdebug[0m] [0mEmitter: Class tree cache stats: reused: 0 -- invalidated: 449[0m
 [0m[[0mdebug[0m] [0mEmitter: Method tree cache stats: resued: 0 -- invalidated: 2346[0m
-[0m[[0mdebug[0m] [0mEmitter (write output): 1474256 us[0m
+[0m[[0mdebug[0m] [0mEmitter (write output): 1732457 us[0m

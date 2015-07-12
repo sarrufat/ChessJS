@@ -1,15 +1,101 @@
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mInitial source changes: [0m
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
-[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala)[0m
 [0m[[0mdebug[0m] [0m	modified: Set()[0m
 [0m[[0mdebug[0m] [0mRemoved products: Set()[0m
 [0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
 [0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala)[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
 [0m[[0mdebug[0m] [0m	product: Set()[0m
 [0m[[0mdebug[0m] [0m	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala, C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 7 sources: invalidated sources (7) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 7 Scala sources to C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\scala-2.11\classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.6[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.6[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 29720552, interfacing (CompilerInterface) with Scala compiler version 2.11.6[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-Xplugin:C:\Users\Sergi\.ivy2\cache\org.scala-js\scalajs-compiler_2.11.6\jars\scalajs-compiler_2.11.6-0.6.4.jar[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	C:\Program Files\Java\jre1.8.0_45\lib\resources.jar;C:\Program Files\Java\jre1.8.0_45\lib\rt.jar;C:\Program Files\Java\jre1.8.0_45\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_45\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_45\lib\jce.jar;C:\Program Files\Java\jre1.8.0_45\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_45\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_45\classes;C:\Users\Sergi\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.6.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\scala-2.11\classes;C:\Users\Sergi\.ivy2\cache\org.webjars\angularjs\jars\angularjs-1.3.14.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\angular-foundation\jars\angular-foundation-0.3.0.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\foundation\jars\foundation-5.3.0.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\modernizr\jars\modernizr-2.7.1.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\fastclick\jars\fastclick-1.0.1.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\jQuery-Autocomplete\jars\jQuery-Autocomplete-1.2.7.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\jquery-cookie\jars\jquery-cookie-1.4.0.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\Placeholders.js\jars\Placeholders.js-3.0.2.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\normalize.css\jars\normalize.css-2.1.3.jar;C:\Users\Sergi\.ivy2\cache\org.scala-js\scalajs-library_2.11\jars\scalajs-library_2.11-0.6.4.jar;C:\Users\Sergi\.ivy2\cache\be.doeraene\scalajs-jquery_sjs0.6_2.11\jars\scalajs-jquery_sjs0.6_2.11-0.8.0.jar;C:\Users\Sergi\.ivy2\cache\org.webjars\jquery\jars\jquery-2.1.3.jar;C:\Users\Sergi\.ivy2\cache\org.scala-js\scalajs-dom_sjs0.6_2.11\jars\scalajs-dom_sjs0.6_2.11-0.8.0.jar;C:\Users\Sergi\.ivy2\cache\com.greencatsoft\scalajs-angular_sjs0.6_2.11\jars\scalajs-angular_sjs0.6_2.11-0.4.jar;C:\Users\Sergi\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.6.jar;C:\Users\Sergi\.ivy2\cache\com.github.scopt\scopt_2.11\jars\scopt_2.11-3.3.0.jar[0m
+[0m[[33mwarn[0m] [0mthere were two feature warnings; re-run with -feature for details[0m
+[0m[[33mwarn[0m] [0mone warning found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 19.001881127 s[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala source file has the following implicit definitions changed:[0m
+[0m[[0mdebug[0m] [0m	DynamicScope, scope.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following member ref dependencies of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala are invalidated:[0m
+[0m[[0mdebug[0m] [0m	C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, copy$default$2, $asInstanceOf, copy$default$5, ChessChallenge, productArity, equals, dimN, asInstanceOf, executionStart, synchronized, $isInstanceOf, canEqual, pTypes, copy$default$4, main, productPrefix, timing, notifyAll, isInstanceOf, <init>, Config, apply, ==, clone, Options, pieces, copy$default$3, copy, toString, args, !=, getClass, copy$default$1, ne, eq, productIterator, dimM, delayedInit, ##, finalize, productElement, hashCode, printResult.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala: Set(<init>, Config, apply)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala: Set(dimN, asInstanceOf, timing, isInstanceOf, <init>, Config, apply, ==, pieces, toString, !=, ne, dimM)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala: Set(dimN, asInstanceOf, isInstanceOf, <init>, Config, apply, ==, pieces, toString, !=, ne, eq, dimM)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala: Set(dimN, asInstanceOf, timing, isInstanceOf, <init>, Config, apply, ==, pieces, !=, ne, dimM)[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	RookMov, est, notify, unapply, Knight, newPiece, _tryCounter, northEst, wait, isSolved, copy$default$2, $asInstanceOf, King, Board, tryNewPiece, N, productArity, equals, asInstanceOf, _threatening, pos, synchronized, $isInstanceOf, allPos, removePiece, Bishop, M, canEqual, west, productPrefix, threatening, notifyAll, readResolve, checkFreePos, vincr, isInstanceOf, getPossibleCells, <init>, north, pMatrix, apply, board, Queen, ==, clone, toChar, southWest, $init$, createNew, Rook, movVectors, BishopMov, south, nonFree, copy, PieceBase, toString, !=, getClass, copy$default$1, genCells, tryCounter, ne, toResult, eq, productIterator, northWest, ##, finalize, Piece, isInside, productElement, hashCode, southEst.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala: Set(isSolved, Board, tryNewPiece, asInstanceOf, pos, removePiece, isInstanceOf, getPossibleCells, <init>, apply, board, ==, toString, !=, tryCounter, ne, toResult)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala: Set(newPiece, Board, asInstanceOf, pos, threatening, isInstanceOf, <init>, apply, board, ==, !=, ne)[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\package.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	ResultPositions, notify, package, wait, $asInstanceOf, equals, asInstanceOf, synchronized, $isInstanceOf, notifyAll, ResultPos, isInstanceOf, Results, ThreateningVector, ==, clone, PieceParam, Dimension, toString, Pos, !=, getClass, ne, eq, ##, finalize, hashCode, Positions, Direction.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala: Set(ResultPositions, package, asInstanceOf, isInstanceOf, Results, ThreateningVector, ==, PieceParam, Dimension, Pos, !=, ne)[0m
+[0m[[0mdebug[0m] [0mNone of the modified names appears in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala. This dependency is not being considered for invalidation.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Chess.scala: Set(package, asInstanceOf, isInstanceOf, ==, toString, Pos, !=, eq, Positions, Direction)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala: Set(ResultPositions, package, asInstanceOf, ResultPos, isInstanceOf, Results, ==, PieceParam, Dimension, toString, Pos, !=, ne, Positions)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala: Set(package, asInstanceOf, isInstanceOf, Results, ==, toString, !=, ne, eq)[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, $asInstanceOf, equals, asInstanceOf, solveAsync, synchronized, $isInstanceOf, ChessService, notifyAll, isInstanceOf, <init>, ==, clone, toString, !=, getClass, ne, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala: Set(asInstanceOf, solveAsync, ChessService, isInstanceOf, <init>, ==, toString, !=, ne, eq)[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, wait, $asInstanceOf, solve, equals, seqPieces, asInstanceOf, synchronized, printresult, $isInstanceOf, notifyAll, isInstanceOf, <init>, apply, ==, clone, Solver, toString, !=, getClass, ne, verboseSolve, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mInvalidating C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala...[0m
+[0m[[0mdebug[0m] [0mInvalidating (transitively) by inheritance from C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala...[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala)[0m
+[0m[[0mdebug[0m] [0mInvalidated by transitive inheritance dependency: Set(C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala)[0m
+[0m[[0mdebug[0m] [0mThe C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\Solver2.scala source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, elepasedTimeMS, wait, $asInstanceOf, solve, equals, threateningPT, seqPieces, asInstanceOf, synchronized, printresult, $isInstanceOf, notifyAll, isInstanceOf, <init>, apply, threateningVectors, ==, clone, Solver2, toString, !=, getClass, ne, verboseSolve, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessService.scala: Set(elepasedTimeMS, solve, <init>, apply, Solver2)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\org\sarrufat\chesschallenge\ChessChallenge.scala: Set(asInstanceOf, isInstanceOf, <init>, apply, ==, Solver2, toString, verboseSolve, eq)[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of C:\Users\Sergi\workspaceLuna\ChessChallengeJS\src\main\scala\chess\webapp\ChessApp.scala: Set(asInstanceOf, isInstanceOf, <init>, apply, ==, Solver2, toString, !=, ne, eq)[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m

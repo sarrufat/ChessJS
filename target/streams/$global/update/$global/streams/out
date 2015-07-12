@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.scala-lang#scala-library;2.11.6 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@394f0dfb[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@634f5094[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.6] org.scala-lang#scala-library;2.11.6[0m
@@ -16,7 +16,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.scala-lang#scala-library;2.11.6 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.webjars#angularjs;1.3.14 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.webjars#angularjs;1.3.14 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@45e3d2f6[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1abcc6e[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.webjars#angularjs;1.3.14[0m
 [0m[[0mdebug[0m] [0m	found org.webjars#angularjs;1.3.14 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.webjars#angularjs;1.3.14 [compile->runtime][0m
@@ -24,7 +24,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.webjars#angularjs;1.3.14 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.webjars#angular-foundation;0.3.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.webjars#angular-foundation;0.3.0 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@378c5af3[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@242ff808[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.webjars#angular-foundation;0.3.0[0m
 [0m[[0mdebug[0m] [0m	found org.webjars#angular-foundation;0.3.0 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0->org.webjars#angular-foundation;0.3.0 [compile->runtime][0m
@@ -1409,7 +1409,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-http;8.1.16.v20140903!jetty-http.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty.orbit#javax.servlet;3.0.0.v201112011016!javax.servlet.jar(orbit)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jetty#jetty-continuation;8.1.16.v20140903!jetty-continuation.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1626ms :: artifacts dl 62ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2870ms :: artifacts dl 62ms[0m
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 compile produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 runtime produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 test produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-test.xml[0m
@@ -1424,7 +1424,7 @@
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 pom produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 scala-tool produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for org.sarrufat#chesschallengejs_sjs0.6_2.11;0.1.0 phantom-js-jetty produced in C:\Users\Sergi\workspaceLuna\ChessChallengeJS\target\resolution-cache\reports\org.sarrufat-chesschallengejs_sjs0.6_2.11-phantom-js-jetty.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1626ms resolve - 62ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2870ms resolve - 62ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mScala version was updated by one of library dependencies:[0m
 [0m[[33mwarn[0m] [0m	* org.scala-lang:scala-library:(2.11.6, 2.11.4, 2.11.5) -> 2.11.7[0m
