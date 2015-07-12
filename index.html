@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="ChessApp">
+<head>
+<meta charset="UTF-8">
+<title>Chess Challenge</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/foundation.css" />
+</head>
+<body>
+
+
+
+    <script type="text/javascript" src="./target/scala-2.11/chesschallengejs-fastopt.js"></script>
+    <!-- Include JavaScript dependencies -->
+    <script type="text/javascript" src="./target/scala-2.11/chesschallengejs-jsdeps.js"></script>
+    <script type="text/javascript" src="./target/scala-2.11/chesschallengejs-launcher.js"></script>
+    <div class="row">
+        <div class="ssmall-30 columns">
+            <h1>Welcome to Chess Challenge</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-30 columns">
+            <div class="panel">
+                <h3>The problem</h3>
+                <p>The problem consists on finding all unique configurations of a set of normal chess pieces on a chess board with dimensions M×N where none
+                    of the pieces is in a position to take any of the others. The colour of the pieces doesn't matter, and there are no pawns among the pieces.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row callout panel" ng-controller="ChessController as chess">
+        <h4>Inputs</h4>
+        <div class="row">
+            <div class="small-30 columns">
+                <div class="small-2 columns">
+                    <label>Board dimensions</label> <select ng-model="boardT">
+                        <option value="4x4">4x4</option>
+                        <option value="5x5">5x5</option>
+                        <option value="6x6">6x6</option>
+                        <option value="7x7">7x7</option>
+                        <option value="8x8">8x8</option>
+                    </select>
+                </div>
+
+                <div class="small-2 columns" ng-repeat="p in pieces">
+                    <ul class="medium-block-grid-2">
+                        <li>
+                            <div class="switch small round">
+                                <p>{{p.label}}</p>
+                                <label> <input id="piece{{$index}}" type="checkbox" ng-model="p.checked">
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div ng-show="p.checked"">
+                                <input type="number" ng-model="p.number" min="1" max="8">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="button" class="small round" ng-click="calculate()">Calculate</button>
+        </div>
+        <div class="small-5 columns">
+            <alert ng-repeat="alert in alerts" type="alert.atype" class="round" close="closeAlert($index)">{{alert.msg}}</alert>
+        </div>
+        <div class="small-8 columns" ng-show="resInfo.length > 0">
+            <alert ng-repeat="res in resInfo" type="success" class="round" >{{res.strMessage()}}</alert>
+        </div>
+    </div>
+
+</body>
+<!-- Include Scala.js compiled code -->
+
+</html>
+
