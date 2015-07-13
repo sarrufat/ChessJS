@@ -68,8 +68,16 @@
         <div class="small-5 columns">
             <alert ng-repeat="alert in alerts" type="alert.atype" class="round" close="closeAlert($index)">{{alert.msg}}</alert>
         </div>
-        <div class="small-8 columns" ng-show="resInfo.length > 0">
-            <alert ng-repeat="res in resInfo" type="success" class="round" >{{res.strMessage()}}</alert>
+        <div class="row">
+            <div ng-show="resInfo.length > 0">
+                <alert ng-repeat="res in resInfo" type="success" class="round" ng-click="res.click()">{{res.strMessage()}}</alert>
+                <span ng-repeat="results in currResultInfo.jsResults()">
+                    <span ng-if="!$index%2">
+                        <div class="row"></div>
+                    </span>
+                    <canvas id="board_{{$index}}" width="200" height="200" board="results"></canvas>
+                </span>
+            </div>
         </div>
     </div>
 

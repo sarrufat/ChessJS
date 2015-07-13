@@ -986,6 +986,18 @@ var $isArrayOf_Lcom_greencatsoft_angularjs_Initializable = (function(obj, depth)
 var $asArrayOf_Lcom_greencatsoft_angularjs_Initializable = (function(obj, depth) {
   return (($isArrayOf_Lcom_greencatsoft_angularjs_Initializable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcom.greencatsoft.angularjs.Initializable;", depth))
 });
+var $is_Lcom_greencatsoft_angularjs_Service = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcom_greencatsoft_angularjs_Service)))
+});
+var $as_Lcom_greencatsoft_angularjs_Service = (function(obj) {
+  return (($is_Lcom_greencatsoft_angularjs_Service(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "com.greencatsoft.angularjs.Service"))
+});
+var $isArrayOf_Lcom_greencatsoft_angularjs_Service = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcom_greencatsoft_angularjs_Service)))
+});
+var $asArrayOf_Lcom_greencatsoft_angularjs_Service = (function(obj, depth) {
+  return (($isArrayOf_Lcom_greencatsoft_angularjs_Service(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcom.greencatsoft.angularjs.Service;", depth))
+});
 var $is_Ljava_io_Closeable = (function(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Ljava_io_Closeable)))
 });
@@ -1121,6 +1133,81 @@ var $d_scm_HashEntry = new $TypeData().initClass({
   scm_HashEntry: 1
 });
 /** @constructor */
+var $c_Lcanva_chess_board_DrawBoard$ = (function() {
+  $c_O.call(this);
+  this.image$1 = null;
+  this.bitmap$0$1 = false
+});
+$c_Lcanva_chess_board_DrawBoard$.prototype = new $h_O();
+$c_Lcanva_chess_board_DrawBoard$.prototype.constructor = $c_Lcanva_chess_board_DrawBoard$;
+/** @constructor */
+var $h_Lcanva_chess_board_DrawBoard$ = (function() {
+  /*<skip>*/
+});
+$h_Lcanva_chess_board_DrawBoard$.prototype = $c_Lcanva_chess_board_DrawBoard$.prototype;
+$c_Lcanva_chess_board_DrawBoard$.prototype.canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V = (function(row, col, ctx$1, BLOCK_SIZE$1) {
+  var x1 = (((row + col) | 0) % 2);
+  switch (x1) {
+    case 0: {
+      var jsx$1 = "rgb(230,200,50)";
+      break
+    }
+    case 1: {
+      var jsx$1 = "rgb(90,90,50)";
+      break
+    }
+    default: {
+      var jsx$1;
+      throw new $c_s_MatchError().init___O(x1)
+    }
+  };
+  ctx$1["fillStyle"] = jsx$1;
+  ctx$1["fillRect"]($imul(row, BLOCK_SIZE$1), $imul(col, BLOCK_SIZE$1), BLOCK_SIZE$1, BLOCK_SIZE$1);
+  ctx$1["stroke"]()
+});
+$c_Lcanva_chess_board_DrawBoard$.prototype.image$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLImageElement = (function() {
+  if ((!this.bitmap$0$1)) {
+    this.image$1 = $g["document"]["createElement"]("img");
+    this.bitmap$0$1 = true
+  };
+  return this.image$1
+});
+$c_Lcanva_chess_board_DrawBoard$.prototype.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V = (function(res$1, ctx$1, BLOCK_SIZE$1) {
+  var xs = $m_s_Array$().apply__C__sc_Seq__AC(80, new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_jl_Character().init___C(82), new $c_jl_Character().init___C(78), new $c_jl_Character().init___C(66), new $c_jl_Character().init___C(81), new $c_jl_Character().init___C(75)]));
+  var pOrder = new $c_scm_WrappedArray$ofChar().init___AC(xs);
+  this.image__Lorg_scalajs_dom_raw_HTMLImageElement()["src"] = "img/pieces.png";
+  var these = res$1;
+  while ((!these.isEmpty__Z())) {
+    var arg1 = these.head__O();
+    var pos = $as_T2(arg1);
+    var c = pos.$$und2$mcC$sp__C();
+    var elem = new $c_jl_Character().init___C(c);
+    var delta = $imul(50, $s_sc_GenSeqLike$class__indexOf__sc_GenSeqLike__O__I__I(pOrder, elem, 0));
+    var canvasOffsetX = $imul($as_T2(pos.$$und1__O()).$$und1$mcI$sp__I(), BLOCK_SIZE$1);
+    var canvasOffsetY = $imul($as_T2(pos.$$und1__O()).$$und2$mcI$sp__I(), BLOCK_SIZE$1);
+    ctx$1["drawImage"]($m_Lcanva_chess_board_DrawBoard$().image__Lorg_scalajs_dom_raw_HTMLImageElement(), delta, 0.0, BLOCK_SIZE$1, BLOCK_SIZE$1, canvasOffsetX, canvasOffsetY, BLOCK_SIZE$1, BLOCK_SIZE$1);
+    var this$15 = these;
+    these = this$15.tail__sci_List()
+  }
+});
+$c_Lcanva_chess_board_DrawBoard$.prototype.image__Lorg_scalajs_dom_raw_HTMLImageElement = (function() {
+  return ((!this.bitmap$0$1) ? this.image$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLImageElement() : this.image$1)
+});
+var $d_Lcanva_chess_board_DrawBoard$ = new $TypeData().initClass({
+  Lcanva_chess_board_DrawBoard$: 0
+}, false, "canva.chess.board.DrawBoard$", {
+  Lcanva_chess_board_DrawBoard$: 1,
+  O: 1
+});
+$c_Lcanva_chess_board_DrawBoard$.prototype.$classData = $d_Lcanva_chess_board_DrawBoard$;
+var $n_Lcanva_chess_board_DrawBoard$ = (void 0);
+var $m_Lcanva_chess_board_DrawBoard$ = (function() {
+  if ((!$n_Lcanva_chess_board_DrawBoard$)) {
+    $n_Lcanva_chess_board_DrawBoard$ = new $c_Lcanva_chess_board_DrawBoard$().init___()
+  };
+  return $n_Lcanva_chess_board_DrawBoard$
+});
+/** @constructor */
 var $c_Lchess_webapp_ChessService = (function() {
   $c_O.call(this)
 });
@@ -1211,6 +1298,18 @@ var $s_Lcom_greencatsoft_angularjs_Controller$class__initialize__Lcom_greencatso
   var scope = $$this.scope$1;
   new $c_Lcom_greencatsoft_angularjs_core_Scoped$DynamicScope().init___Lcom_greencatsoft_angularjs_core_Scoped__Lcom_greencatsoft_angularjs_core_Scope($$this, scope).scope$1["controller"] = $$this
 });
+var $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope = (function($$this, scope) {
+  new $c_Lcom_greencatsoft_angularjs_core_Scoped$DynamicScope().init___Lcom_greencatsoft_angularjs_core_Scoped__Lcom_greencatsoft_angularjs_core_Scope($$this, scope).scope$1["directive"] = $$this;
+  return scope
+});
+var $s_Lcom_greencatsoft_angularjs_Directive$class__buildConfig__Lcom_greencatsoft_angularjs_Directive__sjs_js_Dictionary__sjs_js_Dictionary = (function($$this, config) {
+  config["link"] = (function(f) {
+    return (function(arg1, arg2, arg3, arg4) {
+      f.apply__Lcom_greencatsoft_angularjs_core_Scope__sjs_js_Array__Lcom_greencatsoft_angularjs_Attributes__sjs_js_UndefOr__V(arg1, arg2, arg3, arg4)
+    })
+  })(new $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1().init___Lcom_greencatsoft_angularjs_Directive($$this));
+  return config
+});
 /** @constructor */
 var $c_Lcom_greencatsoft_angularjs_Module = (function() {
   $c_O.call(this);
@@ -1239,7 +1338,13 @@ var $d_Lcom_greencatsoft_angularjs_Module = new $TypeData().initClass({
 });
 $c_Lcom_greencatsoft_angularjs_Module.prototype.$classData = $d_Lcom_greencatsoft_angularjs_Module;
 var $s_Lcom_greencatsoft_angularjs_Named$class__$$init$__Lcom_greencatsoft_angularjs_Named__V = (function($$this) {
-  $$this.name$1 = $objectGetClass($$this).getSimpleName__T()
+  $$this.com$greencatsoft$angularjs$Named$$undsetter$und$name$und$eq__T__V($objectGetClass($$this).getSimpleName__T())
+});
+var $s_Lcom_greencatsoft_angularjs_RestrictedDirective$class__buildConfig__Lcom_greencatsoft_angularjs_RestrictedDirective__sjs_js_Dictionary__sjs_js_Dictionary = (function($$this, config) {
+  var this$3 = new $c_sci_Set$Set1().init___O("A");
+  var s = $s_sc_TraversableOnce$class__mkString__sc_TraversableOnce__T__T__T__T(this$3, "", "", "");
+  config["restrict"] = s;
+  return $s_Lcom_greencatsoft_angularjs_Directive$class__buildConfig__Lcom_greencatsoft_angularjs_Directive__sjs_js_Dictionary__sjs_js_Dictionary($$this, config)
 });
 var $s_Lcom_greencatsoft_angularjs_core_ScopeAware$class__initialize__Lcom_greencatsoft_angularjs_core_ScopeAware__V = (function($$this) {
   $$this.scope$1 = $$this.rawScope$1;
@@ -1295,6 +1400,11 @@ $c_Lcom_greencatsoft_angularjs_internal_ServiceProxy$.prototype.bind__sjs_js_Any
       throw e
     }
   }
+});
+$c_Lcom_greencatsoft_angularjs_internal_ServiceProxy$.prototype.unbind__sjs_js_Any__s_Option = (function(service) {
+  var target = service["controller"];
+  var $$this = ((target === (void 0)) ? (void 0) : $as_Lcom_greencatsoft_angularjs_Service(target));
+  return (($$this === (void 0)) ? $m_s_None$() : new $c_s_Some().init___O($$this))
 });
 var $d_Lcom_greencatsoft_angularjs_internal_ServiceProxy$ = new $TypeData().initClass({
   Lcom_greencatsoft_angularjs_internal_ServiceProxy$: 0
@@ -3234,6 +3344,13 @@ var $s_sc_GenSeqLike$class__equals__sc_GenSeqLike__O__Z = (function($$this, that
     return false
   }
 });
+var $s_sc_GenSeqLike$class__indexOf__sc_GenSeqLike__O__I__I = (function($$this, elem, from) {
+  return $$this.indexWhere__F1__I__I(new $c_sjsr_AnonFunction1().init___sjs_js_Function1((function($$this$1, elem$1) {
+    return (function(x$1$2) {
+      return $m_sr_BoxesRunTime$().equals__O__O__Z(elem$1, x$1$2)
+    })
+  })($$this, elem)), from)
+});
 var $s_sc_GenSetLike$class__liftedTree1$1__p0__sc_GenSetLike__sc_GenSet__Z = (function($$this, x2$1) {
   try {
     return $$this.subsetOf__sc_GenSet__Z(x2$1)
@@ -3259,6 +3376,9 @@ var $s_sc_IndexedSeqOptimized$class__lengthCompare__sc_IndexedSeqOptimized__I__I
 });
 var $s_sc_IndexedSeqOptimized$class__last__sc_IndexedSeqOptimized__O = (function($$this) {
   return (($$this.length__I() > 0) ? $$this.apply__I__O((((-1) + $$this.length__I()) | 0)) : $s_sc_TraversableLike$class__last__sc_TraversableLike__O($$this))
+});
+var $s_sc_IndexedSeqOptimized$class__negLength__p0__sc_IndexedSeqOptimized__I__I = (function($$this, n) {
+  return ((n >= $$this.length__I()) ? (-1) : n)
 });
 var $s_sc_IndexedSeqOptimized$class__copyToArray__sc_IndexedSeqOptimized__O__I__I__V = (function($$this, xs, start, len) {
   var i = 0;
@@ -3323,6 +3443,25 @@ var $s_sc_IndexedSeqOptimized$class__exists__sc_IndexedSeqOptimized__F1__Z = (fu
 });
 var $s_sc_IndexedSeqOptimized$class__head__sc_IndexedSeqOptimized__O = (function($$this) {
   return ($s_sc_IndexedSeqOptimized$class__isEmpty__sc_IndexedSeqOptimized__Z($$this) ? new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I($$this, 0, $$this.length__I()).next__O() : $$this.apply__I__O(0))
+});
+var $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I = (function($$this, p, from) {
+  var start = ((from > 0) ? from : 0);
+  var len = $$this.length__I();
+  var i = start;
+  while (true) {
+    if ((i < len)) {
+      var arg1 = $$this.apply__I__O(i);
+      var jsx$1 = (!$uZ(p.apply__O__O(arg1)))
+    } else {
+      var jsx$1 = false
+    };
+    if (jsx$1) {
+      i = ((1 + i) | 0)
+    } else {
+      break
+    }
+  };
+  return $s_sc_IndexedSeqOptimized$class__negLength__p0__sc_IndexedSeqOptimized__I__I($$this, ((start + ((i - start) | 0)) | 0))
 });
 var $s_sc_IterableLike$class__copyToArray__sc_IterableLike__O__I__I__V = (function($$this, xs, start, len) {
   var i = start;
@@ -3407,6 +3546,14 @@ var $s_sc_Iterator$class__toStream__sc_Iterator__sci_Stream = (function($$this) 
     $m_sci_Stream$();
     return $m_sci_Stream$Empty$()
   }
+});
+var $s_sc_Iterator$class__drop__sc_Iterator__I__sc_Iterator = (function($$this, n) {
+  var j = 0;
+  while (((j < n) && $$this.hasNext__Z())) {
+    $$this.next__O();
+    j = ((1 + j) | 0)
+  };
+  return $$this
 });
 var $s_sc_Iterator$class__toString__sc_Iterator__T = (function($$this) {
   return (($$this.hasNext__Z() ? "non-empty" : "empty") + " iterator")
@@ -3503,6 +3650,23 @@ var $s_sc_LinearSeqOptimized$class__sameElements__sc_LinearSeqOptimized__sc_GenI
   } else {
     return $s_sc_IterableLike$class__sameElements__sc_IterableLike__sc_GenIterable__Z($$this, that)
   }
+});
+var $s_sc_LinearSeqOptimized$class__indexWhere__sc_LinearSeqOptimized__F1__I__I = (function($$this, p, from) {
+  var i = from;
+  var these = $$this.drop__I__sc_LinearSeqOptimized(from);
+  while (true) {
+    var this$1 = these;
+    if ($s_sc_TraversableOnce$class__nonEmpty__sc_TraversableOnce__Z(this$1)) {
+      if ($uZ(p.apply__O__O(these.head__O()))) {
+        return i
+      };
+      i = ((1 + i) | 0);
+      these = $as_sc_LinearSeqOptimized(these.tail__O())
+    } else {
+      break
+    }
+  };
+  return (-1)
 });
 var $s_sc_LinearSeqOptimized$class__contains__sc_LinearSeqOptimized__O__Z = (function($$this, elem) {
   var these = $$this;
@@ -3633,6 +3797,18 @@ var $s_sc_SeqLike$class__contains__sc_SeqLike__O__Z = (function($$this, elem) {
     })
   })($$this, elem)))
 });
+var $s_sc_SeqLike$class__indexWhere__sc_SeqLike__F1__I__I = (function($$this, p, from) {
+  var i = from;
+  var it = $$this.iterator__sc_Iterator().drop__I__sc_Iterator(from);
+  while (it.hasNext__Z()) {
+    if ($uZ(p.apply__O__O(it.next__O()))) {
+      return i
+    } else {
+      i = ((1 + i) | 0)
+    }
+  };
+  return (-1)
+});
 var $s_sc_SeqLike$class__lengthCompare__sc_SeqLike__I__I = (function($$this, len) {
   if ((len < 0)) {
     return 1
@@ -3651,6 +3827,9 @@ var $s_sc_SeqLike$class__lengthCompare__sc_SeqLike__I__I = (function($$this, len
 });
 var $s_sc_SetLike$class__isEmpty__sc_SetLike__Z = (function($$this) {
   return ($$this.size__I() === 0)
+});
+var $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option = (function($$this) {
+  return ($$this.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O($$this.head__O()))
 });
 var $s_sc_TraversableLike$class__to__sc_TraversableLike__scg_CanBuildFrom__O = (function($$this, cbf) {
   var b = cbf.apply__scm_Builder();
@@ -5472,6 +5651,34 @@ var $m_sjs_concurrent_JSExecutionContext$Implicits$ = (function() {
   return $n_sjs_concurrent_JSExecutionContext$Implicits$
 });
 /** @constructor */
+var $c_sjs_js_Dictionary$ = (function() {
+  $c_O.call(this)
+});
+$c_sjs_js_Dictionary$.prototype = new $h_O();
+$c_sjs_js_Dictionary$.prototype.constructor = $c_sjs_js_Dictionary$;
+/** @constructor */
+var $h_sjs_js_Dictionary$ = (function() {
+  /*<skip>*/
+});
+$h_sjs_js_Dictionary$.prototype = $c_sjs_js_Dictionary$.prototype;
+$c_sjs_js_Dictionary$.prototype.empty__sjs_js_Dictionary = (function() {
+  return {}
+});
+var $d_sjs_js_Dictionary$ = new $TypeData().initClass({
+  sjs_js_Dictionary$: 0
+}, false, "scala.scalajs.js.Dictionary$", {
+  sjs_js_Dictionary$: 1,
+  O: 1
+});
+$c_sjs_js_Dictionary$.prototype.$classData = $d_sjs_js_Dictionary$;
+var $n_sjs_js_Dictionary$ = (void 0);
+var $m_sjs_js_Dictionary$ = (function() {
+  if ((!$n_sjs_js_Dictionary$)) {
+    $n_sjs_js_Dictionary$ = new $c_sjs_js_Dictionary$().init___()
+  };
+  return $n_sjs_js_Dictionary$
+});
+/** @constructor */
 var $c_sjs_js_WrappedDictionary$Cache$ = (function() {
   $c_O.call(this);
   this.safeHasOwnProperty$1 = null
@@ -6860,7 +7067,18 @@ $c_Lchess_webapp_ChessApp$.prototype.main__V = (function() {
   })(new $c_Lchess_webapp_ChessApp$$anonfun$1().init___Lcom_greencatsoft_angularjs_Service(target));
   var proxy = ["$scope"];
   proxy["push"](handler);
-  jsx$2["controller"](jsx$1, proxy)
+  jsx$2["controller"](jsx$1, proxy);
+  var jsx$4 = module.module$1;
+  var jsx$3 = $m_Lcanva_chess_board_BoardDirective$().name$1;
+  var target$2 = $m_Lcanva_chess_board_BoardDirective$();
+  var handler$2 = (function(f$1) {
+    return (function(arg1$1, arg2$1, arg3$1, arg4$1, arg5$1, arg6$1, arg7$1, arg8$1, arg9$1, arg10$1) {
+      return f$1.apply__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_UndefOr(this, arg1$1, arg2$1, arg3$1, arg4$1, arg5$1, arg6$1, arg7$1, arg8$1, arg9$1, arg10$1)
+    })
+  })(new $c_Lchess_webapp_ChessApp$$anonfun$2().init___Lcom_greencatsoft_angularjs_Service(target$2));
+  var proxy$2 = [];
+  proxy$2["push"](handler$2);
+  jsx$4["directive"](jsx$3, proxy$2)
 });
 $c_Lchess_webapp_ChessApp$.prototype.$$js$exported$meth$main__O = (function() {
   this.main__V()
@@ -7708,6 +7926,20 @@ var $h_sr_AbstractFunction2 = (function() {
 $h_sr_AbstractFunction2.prototype = $c_sr_AbstractFunction2.prototype;
 $c_sr_AbstractFunction2.prototype.toString__T = (function() {
   return "<function2>"
+});
+/** @constructor */
+var $c_sr_AbstractFunction4 = (function() {
+  $c_O.call(this)
+});
+$c_sr_AbstractFunction4.prototype = new $h_O();
+$c_sr_AbstractFunction4.prototype.constructor = $c_sr_AbstractFunction4;
+/** @constructor */
+var $h_sr_AbstractFunction4 = (function() {
+  /*<skip>*/
+});
+$h_sr_AbstractFunction4.prototype = $c_sr_AbstractFunction4.prototype;
+$c_sr_AbstractFunction4.prototype.toString__T = (function() {
+  return "<function4>"
 });
 /** @constructor */
 var $c_sr_BooleanRef = (function() {
@@ -10515,6 +10747,25 @@ $c_s_Array$.prototype.unapplySeq__O__s_Option = (function(x) {
     return new $c_s_Some().init___O($as_sci_IndexedSeq($s_sc_TraversableLike$class__to__sc_TraversableLike__scg_CanBuildFrom__O(this$1, cbf)))
   }
 });
+$c_s_Array$.prototype.apply__C__sc_Seq__AC = (function(x, xs) {
+  var array = $newArrayObject($d_C.getArrayOf(), [((1 + xs.length__I()) | 0)]);
+  array.u[0] = x;
+  var elem$1 = 0;
+  elem$1 = 1;
+  var this$2 = xs.iterator__sc_Iterator();
+  while (this$2.hasNext__Z()) {
+    var arg1 = this$2.next__O();
+    if ((arg1 === null)) {
+      var x$2 = 0
+    } else {
+      var this$4 = $as_jl_Character(arg1);
+      var x$2 = this$4.value$1
+    };
+    array.u[elem$1] = x$2;
+    elem$1 = ((1 + elem$1) | 0)
+  };
+  return array
+});
 $c_s_Array$.prototype.slowcopy__p2__O__I__O__I__I__V = (function(src, srcPos, dest, destPos, length) {
   var i = srcPos;
   var j = destPos;
@@ -10729,6 +10980,9 @@ $c_sc_AbstractIterator.prototype.addString__scm_StringBuilder__T__T__T__scm_Stri
 });
 $c_sc_AbstractIterator.prototype.isTraversableAgain__Z = (function() {
   return false
+});
+$c_sc_AbstractIterator.prototype.drop__I__sc_Iterator = (function(n) {
+  return $s_sc_Iterator$class__drop__sc_Iterator__I__sc_Iterator(this, n)
 });
 $c_sc_AbstractIterator.prototype.toMap__s_Predef$$less$colon$less__sci_Map = (function(ev) {
   var b = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
@@ -11463,6 +11717,51 @@ var $d_Lchess_webapp_ChessApp$$anonfun$1 = new $TypeData().initClass({
 });
 $c_Lchess_webapp_ChessApp$$anonfun$1.prototype.$classData = $d_Lchess_webapp_ChessApp$$anonfun$1;
 /** @constructor */
+var $c_Lchess_webapp_ChessApp$$anonfun$2 = (function() {
+  $c_sr_AbstractFunction11.call(this);
+  this.target$2$2 = null
+});
+$c_Lchess_webapp_ChessApp$$anonfun$2.prototype = new $h_sr_AbstractFunction11();
+$c_Lchess_webapp_ChessApp$$anonfun$2.prototype.constructor = $c_Lchess_webapp_ChessApp$$anonfun$2;
+/** @constructor */
+var $h_Lchess_webapp_ChessApp$$anonfun$2 = (function() {
+  /*<skip>*/
+});
+$h_Lchess_webapp_ChessApp$$anonfun$2.prototype = $c_Lchess_webapp_ChessApp$$anonfun$2.prototype;
+$c_Lchess_webapp_ChessApp$$anonfun$2.prototype.init___Lcom_greencatsoft_angularjs_Service = (function(target$2) {
+  this.target$2$2 = target$2;
+  return this
+});
+$c_Lchess_webapp_ChessApp$$anonfun$2.prototype.apply__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_Any__sjs_js_UndefOr = (function(t, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9) {
+  $m_Lcom_greencatsoft_angularjs_internal_ServiceProxy$().bind__sjs_js_Any__Lcom_greencatsoft_angularjs_Service__V(t, this.target$2$2);
+  var x1 = this.target$2$2;
+  if ($is_Lcom_greencatsoft_angularjs_Initializable(x1)) {
+    var this$1 = $as_Lcom_greencatsoft_angularjs_Initializable(x1);
+    $s_Lcom_greencatsoft_angularjs_Controller$class__initialize__Lcom_greencatsoft_angularjs_Controller__V(this$1)
+  };
+  var x1$2 = this.target$2$2;
+  var result = ($is_F0(x1$2) ? $as_F0(x1$2).apply__O() : null);
+  var this$2 = $m_s_Option$().apply__O__s_Option(result);
+  var $$this = (this$2.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$2.get__O()));
+  if ($$this.isEmpty__Z()) {
+    return (void 0)
+  } else {
+    var arg1$1 = $$this.get__O();
+    return arg1$1
+  }
+});
+var $d_Lchess_webapp_ChessApp$$anonfun$2 = new $TypeData().initClass({
+  Lchess_webapp_ChessApp$$anonfun$2: 0
+}, false, "chess.webapp.ChessApp$$anonfun$2", {
+  Lchess_webapp_ChessApp$$anonfun$2: 1,
+  sr_AbstractFunction11: 1,
+  O: 1,
+  F11: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lchess_webapp_ChessApp$$anonfun$2.prototype.$classData = $d_Lchess_webapp_ChessApp$$anonfun$2;
+/** @constructor */
 var $c_Lchess_webapp_PieceModel = (function() {
   $c_O.call(this);
   this.label$1 = null;
@@ -11649,13 +11948,16 @@ $c_Lchess_webapp_ResultInfo.prototype.productElement__I__O = (function(x$1) {
     }
   }
 });
+$c_Lchess_webapp_ResultInfo.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+});
 $c_Lchess_webapp_ResultInfo.prototype.strMessage__T = (function() {
   var jsx$1 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array([" Found ", " in ", " for ", "X", " board with ", ""]));
   var this$1 = this.results$1;
   return jsx$1.s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$s_sc_LinearSeqOptimized$class__length__sc_LinearSeqOptimized__I(this$1), this.ellapsedFMT__p1__T(), this.config$1.dimM$1, this.config$1.dimN$1, this.verbosePieces__p1__T()]))
 });
-$c_Lchess_webapp_ResultInfo.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$click__O = (function() {
+  this.click__V()
 });
 $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$results__O = (function() {
   return this.results$1
@@ -11666,6 +11968,38 @@ $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$config__O = (function()
 $c_Lchess_webapp_ResultInfo.prototype.ellapsedFMT__p1__T = (function() {
   var x1 = this.ellapsed$1;
   return (x1.$$less__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I__I__I(5000, 0, 0)) ? new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", " msecs."])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.ellapsed$1])) : new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", " secs."])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.ellapsed$1.$$div__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I__I(1000, 0, 0))])))
+});
+$c_Lchess_webapp_ResultInfo.prototype.jsResults__sjs_js_Array = (function() {
+  var col = this.results$1;
+  if ($is_sjs_js_ArrayOps(col)) {
+    var x2 = $as_sjs_js_ArrayOps(col);
+    return x2.scala$scalajs$js$ArrayOps$$array$f
+  } else if ($is_sjs_js_WrappedArray(col)) {
+    var x3 = $as_sjs_js_WrappedArray(col);
+    return x3.array$6
+  } else {
+    var result = [];
+    var these = col;
+    while ((!these.isEmpty__Z())) {
+      var arg1 = these.head__O();
+      $uI(result["push"](arg1));
+      var this$2 = these;
+      these = this$2.tail__sci_List()
+    };
+    return result
+  }
+});
+$c_Lchess_webapp_ResultInfo.prototype.click__V = (function() {
+  var this$1 = $m_Lchess_webapp_ChessController$().controlScope$1;
+  if ((!this$1.isEmpty__Z())) {
+    var arg1 = this$1.get__O();
+    arg1["currResultInfo"] = this;
+    var this$2 = this.results$1;
+    var x = ("click  " + $s_sc_LinearSeqOptimized$class__length__sc_LinearSeqOptimized__I(this$2));
+    var this$4 = $m_s_Console$();
+    var this$5 = this$4.outVar$2;
+    $as_Ljava_io_PrintStream(this$5.tl$1.get__O()).println__O__V(x)
+  }
 });
 $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$ellapsed__O = (function() {
   return this.ellapsed$1
@@ -11700,6 +12034,9 @@ $c_Lchess_webapp_ResultInfo.prototype.hashCode__I = (function() {
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.results$1));
   return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
 });
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$jsResults__O = (function() {
+  return this.jsResults__sjs_js_Array()
+});
 $c_Lchess_webapp_ResultInfo.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
 });
@@ -11724,6 +12061,12 @@ Object["defineProperty"]($c_Lchess_webapp_ResultInfo.prototype, "results", {
 $c_Lchess_webapp_ResultInfo.prototype["strMessage"] = (function() {
   return this.$$js$exported$meth$strMessage__O()
 });
+$c_Lchess_webapp_ResultInfo.prototype["jsResults"] = (function() {
+  return this.$$js$exported$meth$jsResults__O()
+});
+$c_Lchess_webapp_ResultInfo.prototype["click"] = (function() {
+  return this.$$js$exported$meth$click__O()
+});
 var $is_Lchess_webapp_ResultInfo = (function(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lchess_webapp_ResultInfo)))
 });
@@ -11747,6 +12090,390 @@ var $d_Lchess_webapp_ResultInfo = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lchess_webapp_ResultInfo.prototype.$classData = $d_Lchess_webapp_ResultInfo;
+/** @constructor */
+var $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1 = (function() {
+  $c_sr_AbstractFunction4.call(this);
+  this.$$outer$2 = null
+});
+$c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype = new $h_sr_AbstractFunction4();
+$c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.constructor = $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1;
+/** @constructor */
+var $h_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1 = (function() {
+  /*<skip>*/
+});
+$h_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype = $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype;
+$c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply__Lcom_greencatsoft_angularjs_core_Scope__sjs_js_Array__Lcom_greencatsoft_angularjs_Attributes__sjs_js_UndefOr__V = (function(scope, elems, attrs, controllers) {
+  var rc6 = false;
+  var x2 = null;
+  var x1 = ((controllers === (void 0)) ? $m_s_None$() : new $c_s_Some().init___O(controllers));
+  matchEnd7: {
+    if ($is_s_Some(x1)) {
+      rc6 = true;
+      x2 = $as_s_Some(x1);
+      var arr = x2.x$2;
+      if ($uZ($g["Array"]["isArray"](arr))) {
+        var this$5 = $m_sc_Seq$();
+        $m_sjs_js_WrappedArray$();
+        var array = [];
+        $uI(arr["length"]);
+        var i = 0;
+        var len = $uI(arr["length"]);
+        while ((i < len)) {
+          var index = i;
+          var arg1 = arr[index];
+          var elem = $m_Lcom_greencatsoft_angularjs_internal_ServiceProxy$().unbind__sjs_js_Any__s_Option(arg1);
+          array["push"](elem);
+          i = ((1 + i) | 0)
+        };
+        $m_sjs_js_WrappedArray$();
+        var array$1 = [];
+        var i$1 = 0;
+        var len$1 = $uI(array["length"]);
+        while ((i$1 < len$1)) {
+          var index$1 = i$1;
+          var arg1$1 = array[index$1];
+          var xo = $as_s_Option(arg1$1);
+          var xs = xo.toList__sci_List();
+          if ((xs !== null)) {
+            var xs$1 = xs;
+            x: {
+              _loop: while (true) {
+                var this$10 = xs$1;
+                if ($s_sc_TraversableOnce$class__nonEmpty__sc_TraversableOnce__Z(this$10)) {
+                  var elem$1 = xs$1.head__O();
+                  array$1["push"](elem$1);
+                  xs$1 = $as_sc_LinearSeq(xs$1.tail__O());
+                  continue _loop
+                };
+                break x
+              }
+            }
+          } else {
+            var these = xs;
+            while ((!these.isEmpty__Z())) {
+              var arg1$2 = these.head__O();
+              array$1["push"](arg1$2);
+              var this$11 = these;
+              these = this$11.tail__sci_List()
+            }
+          };
+          i$1 = ((1 + i$1) | 0)
+        };
+        var scope$1 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
+        var elems$1 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
+        var this$15 = $m_s_Console$();
+        var this$16 = this$15.outVar$2;
+        $as_Ljava_io_PrintStream(this$16.tl$1.get__O()).println__O__V("board");
+        var this$17 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$1);
+        var this$18 = (this$17.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$17.get__O()));
+        if ((!this$18.isEmpty__Z())) {
+          var v1 = this$18.get__O();
+          var x = $as_T(v1["getAttribute"]("board"));
+          var this$20 = $m_s_Console$();
+          var this$21 = this$20.outVar$2;
+          $as_Ljava_io_PrintStream(this$21.tl$1.get__O()).println__O__V(x);
+          var value = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
+          if ((value === (void 0))) {
+            var jsx$1 = (void 0)
+          } else {
+            var value$1 = $as_T(value);
+            var jsx$1 = value$1
+          };
+          scope$1["$watch"](jsx$1, (function(cd$1, x$2) {
+            return (function(newval$2) {
+              var x$1 = ("$watch " + newval$2);
+              var this$28 = $m_s_Console$();
+              var this$29 = this$28.outVar$2;
+              $as_Ljava_io_PrintStream(this$29.tl$1.get__O()).println__O__V(x$1);
+              var this$30 = $m_Lcanva_chess_board_DrawBoard$();
+              var res = $as_sci_List(newval$2);
+              var _1$mcI$sp = $as_Lchess_webapp_ResultInfo(cd$1["currResultInfo"]).config$1.dimM$1;
+              var _2$mcI$sp = $as_Lchess_webapp_ResultInfo(cd$1["currResultInfo"]).config$1.dimN$1;
+              var ctx = x$2["getContext"]("2d");
+              x$2["width"] = $imul(50, _1$mcI$sp);
+              x$2["height"] = $imul(50, _2$mcI$sp);
+              var isEmpty$4 = (_1$mcI$sp <= 0);
+              var numRangeElements$4 = (isEmpty$4 ? 0 : _1$mcI$sp);
+              var lastElement$4 = (isEmpty$4 ? (-1) : (((-1) + _1$mcI$sp) | 0));
+              var terminalElement$4 = ((1 + lastElement$4) | 0);
+              if ((numRangeElements$4 < 0)) {
+                $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _1$mcI$sp, 1, false)
+              };
+              var i$2 = 0;
+              var count = 0;
+              while ((i$2 !== terminalElement$4)) {
+                var x$3 = i$2;
+                var isEmpty$4$1 = (_2$mcI$sp <= 0);
+                var numRangeElements$4$1 = (isEmpty$4$1 ? 0 : _2$mcI$sp);
+                var lastElement$4$1 = (isEmpty$4$1 ? (-1) : (((-1) + _2$mcI$sp) | 0));
+                var terminalElement$4$1 = ((1 + lastElement$4$1) | 0);
+                if ((numRangeElements$4$1 < 0)) {
+                  $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _2$mcI$sp, 1, false)
+                };
+                var i$3 = 0;
+                var count$1 = 0;
+                while ((i$3 !== terminalElement$4$1)) {
+                  var v1$1 = i$3;
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$3, v1$1, ctx, 50);
+                  count$1 = ((1 + count$1) | 0);
+                  i$3 = ((1 + i$3) | 0)
+                };
+                count = ((1 + count) | 0);
+                i$2 = ((1 + i$2) | 0)
+              };
+              ctx["lineWidth"] = 2.0;
+              ctx["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp), $imul(50, _2$mcI$sp));
+              this$30.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res, ctx, 50)
+            })
+          })(scope$1, v1))
+        };
+        break matchEnd7
+      }
+    };
+    if (rc6) {
+      var c = x2.x$2;
+      var x1$2 = $m_Lcom_greencatsoft_angularjs_internal_ServiceProxy$().unbind__sjs_js_Any__s_Option(c);
+      if ($is_s_Some(x1$2)) {
+        var x2$2 = $as_s_Some(x1$2);
+        var arg = $as_Lcom_greencatsoft_angularjs_Controller(x2$2.x$2);
+        var scope$2 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
+        var elems$2 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
+        var array$2 = [arg];
+        var this$40 = $m_s_Console$();
+        var this$41 = this$40.outVar$2;
+        $as_Ljava_io_PrintStream(this$41.tl$1.get__O()).println__O__V("board");
+        var this$42 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$2);
+        var this$43 = (this$42.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$42.get__O()));
+        if ((!this$43.isEmpty__Z())) {
+          var v1$2 = this$43.get__O();
+          var x$4 = $as_T(v1$2["getAttribute"]("board"));
+          var this$45 = $m_s_Console$();
+          var this$46 = this$45.outVar$2;
+          $as_Ljava_io_PrintStream(this$46.tl$1.get__O()).println__O__V(x$4);
+          var value$2 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
+          if ((value$2 === (void 0))) {
+            var jsx$2 = (void 0)
+          } else {
+            var value$3 = $as_T(value$2);
+            var jsx$2 = value$3
+          };
+          scope$2["$watch"](jsx$2, (function(cd$1$1, x$2$1) {
+            return (function(newval$2$1) {
+              var x$5 = ("$watch " + newval$2$1);
+              var this$53 = $m_s_Console$();
+              var this$54 = this$53.outVar$2;
+              $as_Ljava_io_PrintStream(this$54.tl$1.get__O()).println__O__V(x$5);
+              var this$55 = $m_Lcanva_chess_board_DrawBoard$();
+              var res$1 = $as_sci_List(newval$2$1);
+              var _1$mcI$sp$1 = $as_Lchess_webapp_ResultInfo(cd$1$1["currResultInfo"]).config$1.dimM$1;
+              var _2$mcI$sp$1 = $as_Lchess_webapp_ResultInfo(cd$1$1["currResultInfo"]).config$1.dimN$1;
+              var ctx$1 = x$2$1["getContext"]("2d");
+              x$2$1["width"] = $imul(50, _1$mcI$sp$1);
+              x$2$1["height"] = $imul(50, _2$mcI$sp$1);
+              var isEmpty$4$2 = (_1$mcI$sp$1 <= 0);
+              var numRangeElements$4$2 = (isEmpty$4$2 ? 0 : _1$mcI$sp$1);
+              var lastElement$4$2 = (isEmpty$4$2 ? (-1) : (((-1) + _1$mcI$sp$1) | 0));
+              var terminalElement$4$2 = ((1 + lastElement$4$2) | 0);
+              if ((numRangeElements$4$2 < 0)) {
+                $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _1$mcI$sp$1, 1, false)
+              };
+              var i$4 = 0;
+              var count$2 = 0;
+              while ((i$4 !== terminalElement$4$2)) {
+                var x$6 = i$4;
+                var isEmpty$4$3 = (_2$mcI$sp$1 <= 0);
+                var numRangeElements$4$3 = (isEmpty$4$3 ? 0 : _2$mcI$sp$1);
+                var lastElement$4$3 = (isEmpty$4$3 ? (-1) : (((-1) + _2$mcI$sp$1) | 0));
+                var terminalElement$4$3 = ((1 + lastElement$4$3) | 0);
+                if ((numRangeElements$4$3 < 0)) {
+                  $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _2$mcI$sp$1, 1, false)
+                };
+                var i$5 = 0;
+                var count$3 = 0;
+                while ((i$5 !== terminalElement$4$3)) {
+                  var v1$3 = i$5;
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$6, v1$3, ctx$1, 50);
+                  count$3 = ((1 + count$3) | 0);
+                  i$5 = ((1 + i$5) | 0)
+                };
+                count$2 = ((1 + count$2) | 0);
+                i$4 = ((1 + i$4) | 0)
+              };
+              ctx$1["lineWidth"] = 2.0;
+              ctx$1["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$1), $imul(50, _2$mcI$sp$1));
+              this$55.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$1, ctx$1, 50)
+            })
+          })(scope$2, v1$2))
+        };
+        break matchEnd7
+      } else {
+        var scope$3 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
+        var elems$3 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
+        var array$3 = [];
+        var this$65 = $m_s_Console$();
+        var this$66 = this$65.outVar$2;
+        $as_Ljava_io_PrintStream(this$66.tl$1.get__O()).println__O__V("board");
+        var this$67 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$3);
+        var this$68 = (this$67.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$67.get__O()));
+        if ((!this$68.isEmpty__Z())) {
+          var v1$4 = this$68.get__O();
+          var x$7 = $as_T(v1$4["getAttribute"]("board"));
+          var this$70 = $m_s_Console$();
+          var this$71 = this$70.outVar$2;
+          $as_Ljava_io_PrintStream(this$71.tl$1.get__O()).println__O__V(x$7);
+          var value$4 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
+          if ((value$4 === (void 0))) {
+            var jsx$3 = (void 0)
+          } else {
+            var value$5 = $as_T(value$4);
+            var jsx$3 = value$5
+          };
+          scope$3["$watch"](jsx$3, (function(cd$1$2, x$2$2) {
+            return (function(newval$2$2) {
+              var x$8 = ("$watch " + newval$2$2);
+              var this$78 = $m_s_Console$();
+              var this$79 = this$78.outVar$2;
+              $as_Ljava_io_PrintStream(this$79.tl$1.get__O()).println__O__V(x$8);
+              var this$80 = $m_Lcanva_chess_board_DrawBoard$();
+              var res$2 = $as_sci_List(newval$2$2);
+              var _1$mcI$sp$2 = $as_Lchess_webapp_ResultInfo(cd$1$2["currResultInfo"]).config$1.dimM$1;
+              var _2$mcI$sp$2 = $as_Lchess_webapp_ResultInfo(cd$1$2["currResultInfo"]).config$1.dimN$1;
+              var ctx$2 = x$2$2["getContext"]("2d");
+              x$2$2["width"] = $imul(50, _1$mcI$sp$2);
+              x$2$2["height"] = $imul(50, _2$mcI$sp$2);
+              var isEmpty$4$4 = (_1$mcI$sp$2 <= 0);
+              var numRangeElements$4$4 = (isEmpty$4$4 ? 0 : _1$mcI$sp$2);
+              var lastElement$4$4 = (isEmpty$4$4 ? (-1) : (((-1) + _1$mcI$sp$2) | 0));
+              var terminalElement$4$4 = ((1 + lastElement$4$4) | 0);
+              if ((numRangeElements$4$4 < 0)) {
+                $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _1$mcI$sp$2, 1, false)
+              };
+              var i$6 = 0;
+              var count$4 = 0;
+              while ((i$6 !== terminalElement$4$4)) {
+                var x$9 = i$6;
+                var isEmpty$4$5 = (_2$mcI$sp$2 <= 0);
+                var numRangeElements$4$5 = (isEmpty$4$5 ? 0 : _2$mcI$sp$2);
+                var lastElement$4$5 = (isEmpty$4$5 ? (-1) : (((-1) + _2$mcI$sp$2) | 0));
+                var terminalElement$4$5 = ((1 + lastElement$4$5) | 0);
+                if ((numRangeElements$4$5 < 0)) {
+                  $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _2$mcI$sp$2, 1, false)
+                };
+                var i$7 = 0;
+                var count$5 = 0;
+                while ((i$7 !== terminalElement$4$5)) {
+                  var v1$5 = i$7;
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$9, v1$5, ctx$2, 50);
+                  count$5 = ((1 + count$5) | 0);
+                  i$7 = ((1 + i$7) | 0)
+                };
+                count$4 = ((1 + count$4) | 0);
+                i$6 = ((1 + i$6) | 0)
+              };
+              ctx$2["lineWidth"] = 2.0;
+              ctx$2["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$2), $imul(50, _2$mcI$sp$2));
+              this$80.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$2, ctx$2, 50)
+            })
+          })(scope$3, v1$4))
+        };
+        break matchEnd7
+      }
+    };
+    var x$10 = $m_s_None$();
+    if ((x$10 === x1)) {
+      var scope$4 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
+      var elems$4 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
+      var array$4 = [];
+      var this$90 = $m_s_Console$();
+      var this$91 = this$90.outVar$2;
+      $as_Ljava_io_PrintStream(this$91.tl$1.get__O()).println__O__V("board");
+      var this$92 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$4);
+      var this$93 = (this$92.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$92.get__O()));
+      if ((!this$93.isEmpty__Z())) {
+        var v1$6 = this$93.get__O();
+        var x$11 = $as_T(v1$6["getAttribute"]("board"));
+        var this$95 = $m_s_Console$();
+        var this$96 = this$95.outVar$2;
+        $as_Ljava_io_PrintStream(this$96.tl$1.get__O()).println__O__V(x$11);
+        var value$6 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
+        if ((value$6 === (void 0))) {
+          var jsx$4 = (void 0)
+        } else {
+          var value$7 = $as_T(value$6);
+          var jsx$4 = value$7
+        };
+        scope$4["$watch"](jsx$4, (function(cd$1$3, x$2$3) {
+          return (function(newval$2$3) {
+            var x$12 = ("$watch " + newval$2$3);
+            var this$103 = $m_s_Console$();
+            var this$104 = this$103.outVar$2;
+            $as_Ljava_io_PrintStream(this$104.tl$1.get__O()).println__O__V(x$12);
+            var this$105 = $m_Lcanva_chess_board_DrawBoard$();
+            var res$3 = $as_sci_List(newval$2$3);
+            var _1$mcI$sp$3 = $as_Lchess_webapp_ResultInfo(cd$1$3["currResultInfo"]).config$1.dimM$1;
+            var _2$mcI$sp$3 = $as_Lchess_webapp_ResultInfo(cd$1$3["currResultInfo"]).config$1.dimN$1;
+            var ctx$3 = x$2$3["getContext"]("2d");
+            x$2$3["width"] = $imul(50, _1$mcI$sp$3);
+            x$2$3["height"] = $imul(50, _2$mcI$sp$3);
+            var isEmpty$4$6 = (_1$mcI$sp$3 <= 0);
+            var numRangeElements$4$6 = (isEmpty$4$6 ? 0 : _1$mcI$sp$3);
+            var lastElement$4$6 = (isEmpty$4$6 ? (-1) : (((-1) + _1$mcI$sp$3) | 0));
+            var terminalElement$4$6 = ((1 + lastElement$4$6) | 0);
+            if ((numRangeElements$4$6 < 0)) {
+              $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _1$mcI$sp$3, 1, false)
+            };
+            var i$8 = 0;
+            var count$6 = 0;
+            while ((i$8 !== terminalElement$4$6)) {
+              var x$13 = i$8;
+              var isEmpty$4$7 = (_2$mcI$sp$3 <= 0);
+              var numRangeElements$4$7 = (isEmpty$4$7 ? 0 : _2$mcI$sp$3);
+              var lastElement$4$7 = (isEmpty$4$7 ? (-1) : (((-1) + _2$mcI$sp$3) | 0));
+              var terminalElement$4$7 = ((1 + lastElement$4$7) | 0);
+              if ((numRangeElements$4$7 < 0)) {
+                $m_sci_Range$().scala$collection$immutable$Range$$fail__I__I__I__Z__sr_Nothing$(0, _2$mcI$sp$3, 1, false)
+              };
+              var i$9 = 0;
+              var count$7 = 0;
+              while ((i$9 !== terminalElement$4$7)) {
+                var v1$7 = i$9;
+                $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$13, v1$7, ctx$3, 50);
+                count$7 = ((1 + count$7) | 0);
+                i$9 = ((1 + i$9) | 0)
+              };
+              count$6 = ((1 + count$6) | 0);
+              i$8 = ((1 + i$8) | 0)
+            };
+            ctx$3["lineWidth"] = 2.0;
+            ctx$3["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$3), $imul(50, _2$mcI$sp$3));
+            this$105.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$3, ctx$3, 50)
+          })
+        })(scope$4, v1$6))
+      };
+      break matchEnd7
+    };
+    throw new $c_s_MatchError().init___O(x1)
+  }
+});
+$c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.init___Lcom_greencatsoft_angularjs_Directive = (function($$outer) {
+  if (($$outer === null)) {
+    throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+  } else {
+    this.$$outer$2 = $$outer
+  };
+  return this
+});
+var $d_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1 = new $TypeData().initClass({
+  Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1: 0
+}, false, "com.greencatsoft.angularjs.Directive$$anonfun$buildConfig$1", {
+  Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1: 1,
+  sr_AbstractFunction4: 1,
+  O: 1,
+  F4: 1,
+  s_Serializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.$classData = $d_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1;
 /** @constructor */
 var $c_Lorg_sarrufat_chesschallenge_Board = (function() {
   $c_O.call(this);
@@ -12653,6 +13380,9 @@ var $h_s_Option = (function() {
 $h_s_Option.prototype = $c_s_Option.prototype;
 $c_s_Option.prototype.init___ = (function() {
   return this
+});
+$c_s_Option.prototype.toList__sci_List = (function() {
+  return (this.isEmpty__Z() ? $m_sci_Nil$() : new $c_sci_$colon$colon().init___O__sci_List(this.get__O(), $m_sci_Nil$()))
 });
 $c_s_Option.prototype.isDefined__Z = (function() {
   return (!this.isEmpty__Z())
@@ -13920,6 +14650,18 @@ var $d_sr_ScalaRunTime$$anon$1 = new $TypeData().initClass({
   sc_GenTraversableOnce: 1
 });
 $c_sr_ScalaRunTime$$anon$1.prototype.$classData = $d_sr_ScalaRunTime$$anon$1;
+var $is_Lcom_greencatsoft_angularjs_Controller = (function(obj) {
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcom_greencatsoft_angularjs_Controller)))
+});
+var $as_Lcom_greencatsoft_angularjs_Controller = (function(obj) {
+  return (($is_Lcom_greencatsoft_angularjs_Controller(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "com.greencatsoft.angularjs.Controller"))
+});
+var $isArrayOf_Lcom_greencatsoft_angularjs_Controller = (function(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcom_greencatsoft_angularjs_Controller)))
+});
+var $asArrayOf_Lcom_greencatsoft_angularjs_Controller = (function(obj, depth) {
+  return (($isArrayOf_Lcom_greencatsoft_angularjs_Controller(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcom.greencatsoft.angularjs.Controller;", depth))
+});
 /** @constructor */
 var $c_Ljava_io_PrintStream = (function() {
   $c_Ljava_io_FilterOutputStream.call(this);
@@ -16991,6 +17733,9 @@ $c_Lchess_webapp_ChessController$.prototype.$$js$exported$prop$service__O = (fun
 $c_Lchess_webapp_ChessController$.prototype.$$js$exported$prop$controlScope__s_Option__O = (function(x$1) {
   this.controlScope$1 = x$1
 });
+$c_Lchess_webapp_ChessController$.prototype.com$greencatsoft$angularjs$Named$$undsetter$und$name$und$eq__T__V = (function(x$1) {
+  this.name$1 = x$1
+});
 $c_Lchess_webapp_ChessController$.prototype.initialize__Lchess_webapp_ControllerData__V = (function(scope) {
   scope["boardT"] = "4x4";
   scope["pieces"] = [new $c_Lchess_webapp_PieceModel().init___T("Kings"), new $c_Lchess_webapp_PieceModel().init___T("Queens"), new $c_Lchess_webapp_PieceModel().init___T("Bishops"), new $c_Lchess_webapp_PieceModel().init___T("Rooks"), new $c_Lchess_webapp_PieceModel().init___T("Knights")];
@@ -17016,6 +17761,7 @@ $c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$initialize__Lches
 });
 $c_Lchess_webapp_ChessController$.prototype.calculate__V = (function() {
   this.scope$1["alerts"] = [];
+  this.scope$1["currResultInfo"] = null;
   var this$1 = this.controlScope$1;
   if ((!this$1.isEmpty__Z())) {
     var v1 = this$1.get__O();
@@ -17359,6 +18105,9 @@ $c_sc_IndexedSeqLike$Elements.prototype.init___sc_IndexedSeqLike__I__I = (functi
 });
 $c_sc_IndexedSeqLike$Elements.prototype.hasNext__Z = (function() {
   return (this.index$2 < this.end$2)
+});
+$c_sc_IndexedSeqLike$Elements.prototype.drop__I__sc_Iterator = (function(n) {
+  return ((n <= 0) ? new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this.$$outer$f, this.index$2, this.end$2) : ((((this.index$2 + n) | 0) >= this.end$2) ? new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this.$$outer$f, this.end$2, this.end$2) : new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this.$$outer$f, ((this.index$2 + n) | 0), this.end$2)))
 });
 var $d_sc_IndexedSeqLike$Elements = new $TypeData().initClass({
   sc_IndexedSeqLike$Elements: 0
@@ -18211,6 +18960,61 @@ var $m_scm_ListBuffer$ = (function() {
   return $n_scm_ListBuffer$
 });
 /** @constructor */
+var $c_Lcanva_chess_board_BoardDirective$ = (function() {
+  $c_O.call(this);
+  this.name$1 = null
+});
+$c_Lcanva_chess_board_BoardDirective$.prototype = new $h_O();
+$c_Lcanva_chess_board_BoardDirective$.prototype.constructor = $c_Lcanva_chess_board_BoardDirective$;
+/** @constructor */
+var $h_Lcanva_chess_board_BoardDirective$ = (function() {
+  /*<skip>*/
+});
+$h_Lcanva_chess_board_BoardDirective$.prototype = $c_Lcanva_chess_board_BoardDirective$.prototype;
+$c_Lcanva_chess_board_BoardDirective$.prototype.init___ = (function() {
+  $n_Lcanva_chess_board_BoardDirective$ = this;
+  $s_Lcom_greencatsoft_angularjs_Named$class__$$init$__Lcom_greencatsoft_angularjs_Named__V(this);
+  this.name$1 = "board";
+  return this
+});
+$c_Lcanva_chess_board_BoardDirective$.prototype.toString__T = (function() {
+  return "<function0>"
+});
+$c_Lcanva_chess_board_BoardDirective$.prototype.com$greencatsoft$angularjs$Named$$undsetter$und$name$und$eq__T__V = (function(x$1) {
+  /*<skip>*/
+});
+$c_Lcanva_chess_board_BoardDirective$.prototype.apply__O = (function() {
+  var config = $m_sjs_js_Dictionary$().empty__sjs_js_Dictionary();
+  return $s_Lcom_greencatsoft_angularjs_RestrictedDirective$class__buildConfig__Lcom_greencatsoft_angularjs_RestrictedDirective__sjs_js_Dictionary__sjs_js_Dictionary(this, config)
+});
+var $d_Lcanva_chess_board_BoardDirective$ = new $TypeData().initClass({
+  Lcanva_chess_board_BoardDirective$: 0
+}, false, "canva.chess.board.BoardDirective$", {
+  Lcanva_chess_board_BoardDirective$: 1,
+  O: 1,
+  Lcom_greencatsoft_angularjs_AttributeDirective: 1,
+  Lcom_greencatsoft_angularjs_RestrictedDirective: 1,
+  Lcom_greencatsoft_angularjs_Directive: 1,
+  Lcom_greencatsoft_angularjs_NamedService: 1,
+  Lcom_greencatsoft_angularjs_Service: 1,
+  Lcom_greencatsoft_angularjs_Named: 1,
+  F0: 1,
+  Lcom_greencatsoft_angularjs_core_Scoped: 1,
+  Lcom_greencatsoft_angularjs_internal_ConfigBuilder: 1
+});
+$c_Lcanva_chess_board_BoardDirective$.prototype.$classData = $d_Lcanva_chess_board_BoardDirective$;
+var $n_Lcanva_chess_board_BoardDirective$ = (void 0);
+var $m_Lcanva_chess_board_BoardDirective$ = (function() {
+  if ((!$n_Lcanva_chess_board_BoardDirective$)) {
+    $n_Lcanva_chess_board_BoardDirective$ = new $c_Lcanva_chess_board_BoardDirective$().init___()
+  };
+  return $n_Lcanva_chess_board_BoardDirective$
+});
+$e["canva"] = ($e["canva"] || {});
+$e["canva"]["chess"] = ($e["canva"]["chess"] || {});
+$e["canva"]["chess"]["board"] = ($e["canva"]["chess"]["board"] || {});
+$e["canva"]["chess"]["board"]["BoardDirective"] = $m_Lcanva_chess_board_BoardDirective$;
+/** @constructor */
 var $c_s_reflect_ManifestFactory$AnyManifest$ = (function() {
   $c_s_reflect_ManifestFactory$PhantomManifest.call(this)
 });
@@ -18783,6 +19587,9 @@ $c_sci_StringOps.prototype.toString__T = (function() {
 $c_sci_StringOps.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_sci_StringOps.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_sci_StringOps.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -18968,6 +19775,9 @@ $c_scm_ArrayOps$ofBoolean.prototype.toString__T = (function() {
 $c_scm_ArrayOps$ofBoolean.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_scm_ArrayOps$ofBoolean.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_scm_ArrayOps$ofBoolean.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -19144,6 +19954,9 @@ $c_scm_ArrayOps$ofByte.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofByte.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofByte.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofByte.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -19322,6 +20135,9 @@ $c_scm_ArrayOps$ofChar.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofChar.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofChar.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofChar.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -19502,6 +20318,9 @@ $c_scm_ArrayOps$ofDouble.prototype.toString__T = (function() {
 $c_scm_ArrayOps$ofDouble.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_scm_ArrayOps$ofDouble.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_scm_ArrayOps$ofDouble.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -19674,6 +20493,9 @@ $c_scm_ArrayOps$ofFloat.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofFloat.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofFloat.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofFloat.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -19851,6 +20673,9 @@ $c_scm_ArrayOps$ofInt.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofInt.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofInt.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofInt.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -20033,6 +20858,9 @@ $c_scm_ArrayOps$ofLong.prototype.toString__T = (function() {
 $c_scm_ArrayOps$ofLong.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_scm_ArrayOps$ofLong.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_scm_ArrayOps$ofLong.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -20205,6 +21033,9 @@ $c_scm_ArrayOps$ofRef.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofRef.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofRef.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofRef.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -20390,6 +21221,9 @@ $c_scm_ArrayOps$ofShort.prototype.toString__T = (function() {
 $c_scm_ArrayOps$ofShort.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_scm_ArrayOps$ofShort.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_scm_ArrayOps$ofShort.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -20561,6 +21395,9 @@ $c_scm_ArrayOps$ofUnit.prototype.toString__T = (function() {
 });
 $c_scm_ArrayOps$ofUnit.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_ArrayOps$ofUnit.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayOps$ofUnit.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
@@ -20774,6 +21611,9 @@ $c_sjs_js_ArrayOps.prototype.toString__T = (function() {
 $c_sjs_js_ArrayOps.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_sjs_js_ArrayOps.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_sjs_js_ArrayOps.prototype.toVector__sci_Vector = (function() {
   $m_sci_Vector$();
   var cbf = $m_sc_IndexedSeq$().ReusableCBF$6;
@@ -20794,11 +21634,11 @@ $c_sjs_js_ArrayOps.prototype.iterator__sc_Iterator = (function() {
 $c_sjs_js_ArrayOps.prototype.sizeHintBounded__I__sc_TraversableLike__V = (function(size, boundingColl) {
   $s_scm_Builder$class__sizeHintBounded__scm_Builder__I__sc_TraversableLike__V(this, size, boundingColl)
 });
-$c_sjs_js_ArrayOps.prototype.$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O = (function(that, bf) {
-  return $s_sc_TraversableLike$class__$$plus$plus__sc_TraversableLike__sc_GenTraversableOnce__scg_CanBuildFrom__O(this, that, bf)
-});
 $c_sjs_js_ArrayOps.prototype.length__I = (function() {
   return $uI(this.scala$scalajs$js$ArrayOps$$array$f["length"])
+});
+$c_sjs_js_ArrayOps.prototype.$$plus$plus__sc_GenTraversableOnce__scg_CanBuildFrom__O = (function(that, bf) {
+  return $s_sc_TraversableLike$class__$$plus$plus__sc_TraversableLike__sc_GenTraversableOnce__scg_CanBuildFrom__O(this, that, bf)
 });
 $c_sjs_js_ArrayOps.prototype.toStream__sci_Stream = (function() {
   var this$1 = new $c_sc_IndexedSeqLike$Elements().init___sc_IndexedSeqLike__I__I(this, 0, $uI(this.scala$scalajs$js$ArrayOps$$array$f["length"]));
@@ -20945,6 +21785,9 @@ $c_sc_AbstractSeq.prototype.equals__O__Z = (function(that) {
 });
 $c_sc_AbstractSeq.prototype.toString__T = (function() {
   return $s_sc_TraversableLike$class__toString__sc_TraversableLike__T(this)
+});
+$c_sc_AbstractSeq.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_SeqLike$class__indexWhere__sc_SeqLike__F1__I__I(this, p, from)
 });
 $c_sc_AbstractSeq.prototype.reverse__O = (function() {
   return $s_sc_SeqLike$class__reverse__sc_SeqLike__O(this)
@@ -23143,6 +23986,9 @@ $c_sci_List.prototype.foreach__F1__V = (function(f) {
     these = this$1.tail__sci_List()
   }
 });
+$c_sci_List.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_LinearSeqOptimized$class__indexWhere__sc_LinearSeqOptimized__F1__I__I(this, p, from)
+});
 $c_sci_List.prototype.$$colon$colon$colon__sci_List__sci_List = (function(prefix) {
   return (this.isEmpty__Z() ? prefix : (prefix.isEmpty__Z() ? this : new $c_scm_ListBuffer().init___().$$plus$plus$eq__sc_TraversableOnce__scm_ListBuffer(prefix).prependToList__sci_List__sci_List(this)))
 });
@@ -23817,6 +24663,9 @@ $c_sci_Stream.prototype.foreach__F1__V = (function(f) {
       break x
     }
   }
+});
+$c_sci_Stream.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_LinearSeqOptimized$class__indexWhere__sc_LinearSeqOptimized__F1__I__I(this, p, from)
 });
 $c_sci_Stream.prototype.reverse__O = (function() {
   return this.reverse__sci_Stream()
@@ -25164,6 +26013,9 @@ $c_sci_WrappedString.prototype.companion__scg_GenericCompanion = (function() {
 $c_sci_WrappedString.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_sci_WrappedString.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_sci_WrappedString.prototype.reverse__O = (function() {
   return $s_sc_IndexedSeqOptimized$class__reverse__sc_IndexedSeqOptimized__O(this)
 });
@@ -25580,6 +26432,9 @@ $c_scm_WrappedArray.prototype.companion__scg_GenericCompanion = (function() {
 });
 $c_scm_WrappedArray.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_WrappedArray.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_WrappedArray.prototype.reverse__O = (function() {
   return $s_sc_IndexedSeqOptimized$class__reverse__sc_IndexedSeqOptimized__O(this)
@@ -27070,6 +27925,10 @@ $c_scm_ListBuffer.prototype.foreach__F1__V = (function(f) {
     these = this$2.tail__sci_List()
   }
 });
+$c_scm_ListBuffer.prototype.indexWhere__F1__I__I = (function(p, from) {
+  var this$1 = this.scala$collection$mutable$ListBuffer$$start$6;
+  return $s_sc_LinearSeqOptimized$class__indexWhere__sc_LinearSeqOptimized__F1__I__I(this$1, p, from)
+});
 $c_scm_ListBuffer.prototype.size__I = (function() {
   return this.len$6
 });
@@ -27268,15 +28127,15 @@ $c_scm_StringBuilder.prototype.apply__I__O = (function(idx) {
 $c_scm_StringBuilder.prototype.lengthCompare__I__I = (function(len) {
   return $s_sc_IndexedSeqOptimized$class__lengthCompare__sc_IndexedSeqOptimized__I__I(this, len)
 });
-$c_scm_StringBuilder.prototype.sameElements__sc_GenIterable__Z = (function(that) {
-  return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
-});
 $c_scm_StringBuilder.prototype.apply__O__O = (function(v1) {
   var index = $uI(v1);
   var this$1 = this.underlying$5;
   var thiz = this$1.content$1;
   var c = (65535 & $uI(thiz["charCodeAt"](index)));
   return new $c_jl_Character().init___C(c)
+});
+$c_scm_StringBuilder.prototype.sameElements__sc_GenIterable__Z = (function(that) {
+  return $s_sc_IndexedSeqOptimized$class__sameElements__sc_IndexedSeqOptimized__sc_GenIterable__Z(this, that)
 });
 $c_scm_StringBuilder.prototype.exists__F1__Z = (function(p) {
   return $s_sc_IndexedSeqOptimized$class__exists__sc_IndexedSeqOptimized__F1__Z(this, p)
@@ -27310,6 +28169,9 @@ $c_scm_StringBuilder.prototype.toString__T = (function() {
 });
 $c_scm_StringBuilder.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
+});
+$c_scm_StringBuilder.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_StringBuilder.prototype.reverse__O = (function() {
   return this.reverse__scm_StringBuilder()
@@ -27511,6 +28373,9 @@ $c_sjs_js_WrappedArray.prototype.companion__scg_GenericCompanion = (function() {
 $c_sjs_js_WrappedArray.prototype.foreach__F1__V = (function(f) {
   $s_sc_IndexedSeqOptimized$class__foreach__sc_IndexedSeqOptimized__F1__V(this, f)
 });
+$c_sjs_js_WrappedArray.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
+});
 $c_sjs_js_WrappedArray.prototype.reverse__O = (function() {
   return $s_sc_IndexedSeqOptimized$class__reverse__sc_IndexedSeqOptimized__O(this)
 });
@@ -27687,6 +28552,9 @@ $c_scm_ArrayBuffer.prototype.companion__scg_GenericCompanion = (function() {
 });
 $c_scm_ArrayBuffer.prototype.foreach__F1__V = (function(f) {
   $s_scm_ResizableArray$class__foreach__scm_ResizableArray__F1__V(this, f)
+});
+$c_scm_ArrayBuffer.prototype.indexWhere__F1__I__I = (function(p, from) {
+  return $s_sc_IndexedSeqOptimized$class__indexWhere__sc_IndexedSeqOptimized__F1__I__I(this, p, from)
 });
 $c_scm_ArrayBuffer.prototype.reverse__O = (function() {
   return $s_sc_IndexedSeqOptimized$class__reverse__sc_IndexedSeqOptimized__O(this)
