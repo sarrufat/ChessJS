@@ -9,11 +9,13 @@ import scala.annotation.elidable.ASSERTION
  */
 class Solver2(dimension: Dimension, pieces: Seq[PieceParam]) {
 
+  var optimisePermutations = true
   val seqPieces = (for {
     p ← pieces
     n ← p._1 to 1 by -1
   } yield p._2).toList.mkString
   var elepasedTimeMS = 0L
+  var iterations = 0L
   assert(dimension._1 > 2 && dimension._2 > 2)
   /**
    * Print result as:
@@ -80,7 +82,7 @@ class Solver2(dimension: Dimension, pieces: Seq[PieceParam]) {
     var results: Results = List[ResultPositions]()
     def posToIndex(pos: Pos) = pos._1 * dimension._2 + pos._2
     def recResul(keys: String, thr: Vector[Pos], resPos: ResultPositions): Unit = {
-
+      iterations += 1
       for {
         x ← 0 until dimension._1
         y ← 0 until dimension._2
@@ -92,7 +94,7 @@ class Solver2(dimension: Dimension, pieces: Seq[PieceParam]) {
         // Index of last position
         val idxlp = posToIndex(lastPos._1)
         // Skip permutation if already calculated tree
-        if (lastPos._2 != k || idx > idxlp) {
+        if (!optimisePermutations || lastPos._2 != k || idx > idxlp) {
           val thrK = threateningVectors.get(k).get(idx)
           // Verify bno threatenin
           val currTree = resPos.map(_._1)
@@ -155,6 +157,8 @@ object Solver2 {
    */
   def apply(conf: Config): Solver2 = {
     val pieces = conf.pieces.toSeq.map(cp ⇒ (cp._2, cp._1.charAt(0))).toSeq
-    apply((conf.dimM, conf.dimN))(pieces: _*)
+    var sol = apply((conf.dimM, conf.dimN))(pieces: _*)
+    sol.optimisePermutations = conf.permOpt
+    sol
   }
 }

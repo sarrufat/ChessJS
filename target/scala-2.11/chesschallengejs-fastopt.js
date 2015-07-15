@@ -1167,7 +1167,7 @@ $c_Lcanva_chess_board_DrawBoard$.prototype.canva$chess$board$DrawBoard$$drawBloc
 });
 $c_Lcanva_chess_board_DrawBoard$.prototype.image$lzycompute__p1__Lorg_scalajs_dom_raw_HTMLImageElement = (function() {
   if ((!this.bitmap$0$1)) {
-    this.image$1 = $g["document"]["createElement"]("img");
+    this.image$1 = $g["document"]["getElementById"]("piecesImg");
     this.bitmap$0$1 = true
   };
   return this.image$1
@@ -1175,7 +1175,6 @@ $c_Lcanva_chess_board_DrawBoard$.prototype.image$lzycompute__p1__Lorg_scalajs_do
 $c_Lcanva_chess_board_DrawBoard$.prototype.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V = (function(res$1, ctx$1, BLOCK_SIZE$1) {
   var xs = $m_s_Array$().apply__C__sc_Seq__AC(80, new $c_sjs_js_WrappedArray().init___sjs_js_Array([new $c_jl_Character().init___C(82), new $c_jl_Character().init___C(78), new $c_jl_Character().init___C(66), new $c_jl_Character().init___C(81), new $c_jl_Character().init___C(75)]));
   var pOrder = new $c_scm_WrappedArray$ofChar().init___AC(xs);
-  this.image__Lorg_scalajs_dom_raw_HTMLImageElement()["src"] = "img/pieces.png";
   var these = res$1;
   while ((!these.isEmpty__Z())) {
     var arg1 = these.head__O();
@@ -1232,7 +1231,7 @@ $c_Lchess_webapp_ChessService.prototype.solveAsync__Lorg_sarrufat_chesschallenge
     return (function(results$2) {
       var results = $as_sci_List(results$2);
       var array = scope$1["resInfo"];
-      var elem = new $c_Lchess_webapp_ResultInfo().init___Lorg_sarrufat_chesschallenge_Config__J__sci_List(conf$1, solver$1$1.elepasedTimeMS$1, results);
+      var elem = new $c_Lchess_webapp_ResultInfo().init___Lorg_sarrufat_chesschallenge_Config__J__sci_List__J(conf$1, solver$1$1.elepasedTimeMS$1, results, solver$1$1.iterations$1);
       array["push"](elem);
       return scope$1["$apply"]()
     })
@@ -1536,8 +1535,10 @@ var $c_Lorg_sarrufat_chesschallenge_Solver2 = (function() {
   $c_O.call(this);
   this.org$sarrufat$chesschallenge$Solver2$$dimension$f = null;
   this.pieces$1 = null;
+  this.optimisePermutations$1 = false;
   this.seqPieces$1 = null;
   this.elepasedTimeMS$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.iterations$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
   this.org$sarrufat$chesschallenge$Solver2$$threateningVectors$1 = null;
   this.bitmap$0$1 = false
 });
@@ -1548,6 +1549,9 @@ var $h_Lorg_sarrufat_chesschallenge_Solver2 = (function() {
   /*<skip>*/
 });
 $h_Lorg_sarrufat_chesschallenge_Solver2.prototype = $c_Lorg_sarrufat_chesschallenge_Solver2.prototype;
+$c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$Solver2$$threateningVectors__sci_Map = (function() {
+  return ((!this.bitmap$0$1) ? this.org$sarrufat$chesschallenge$Solver2$$threateningVectors$lzycompute__p1__sci_Map() : this.org$sarrufat$chesschallenge$Solver2$$threateningVectors$1)
+});
 $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.solve__sci_List = (function() {
   var t0 = $m_jl_System$().currentTimeMillis__J();
   var elem = $m_sci_Nil$();
@@ -1667,9 +1671,6 @@ $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.solve__sci_List = (function() 
   var res = $as_sci_Iterable($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(resMap, f, bf$1));
   return res.toList__sci_List()
 });
-$c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$Solver2$$threateningVectors__sci_Map = (function() {
-  return ((!this.bitmap$0$1) ? this.org$sarrufat$chesschallenge$Solver2$$threateningVectors$lzycompute__p1__sci_Map() : this.org$sarrufat$chesschallenge$Solver2$$threateningVectors$1)
-});
 $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$Solver2$$threateningVectors$lzycompute__p1__sci_Map = (function() {
   if ((!this.bitmap$0$1)) {
     var jsx$2 = this.pieces$1;
@@ -1691,11 +1692,13 @@ $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$So
 $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.init___T2__sc_Seq = (function(dimension, pieces) {
   this.org$sarrufat$chesschallenge$Solver2$$dimension$f = dimension;
   this.pieces$1 = pieces;
+  this.optimisePermutations$1 = true;
   var jsx$1 = new $c_Lorg_sarrufat_chesschallenge_Solver2$$anonfun$1().init___Lorg_sarrufat_chesschallenge_Solver2(this);
   var this$1 = $m_sc_Seq$();
   var this$2 = $as_sc_TraversableOnce(pieces.flatMap__F1__scg_CanBuildFrom__O(jsx$1, this$1.ReusableCBFInstance$2)).toList__sci_List();
   this.seqPieces$1 = $s_sc_TraversableOnce$class__mkString__sc_TraversableOnce__T__T__T__T(this$2, "", "", "");
   this.elepasedTimeMS$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
+  this.iterations$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
   $m_s_Predef$().assert__Z__V(((dimension.$$und1$mcI$sp__I() > 2) && (dimension.$$und2$mcI$sp__I() > 2)));
   return this
 });
@@ -1748,6 +1751,7 @@ $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$So
   return $as_sci_Vector(elem$1)
 });
 $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$Solver2$$recResul$1__T__sci_Vector__sci_List__sr_ObjectRef__V = (function(keys, thr, resPos, results$1) {
+  this.iterations$1 = new $c_sjsr_RuntimeLong().init___I__I__I(1, 0, 0).$$plus__sjsr_RuntimeLong__sjsr_RuntimeLong(this.iterations$1);
   var end = this.org$sarrufat$chesschallenge$Solver2$$dimension$f.$$und1$mcI$sp__I();
   var isEmpty$4 = (end <= 0);
   var numRangeElements$4 = (isEmpty$4 ? 0 : end);
@@ -1799,7 +1803,9 @@ $c_Lorg_sarrufat_chesschallenge_Solver2$.prototype.apply__Lorg_sarrufat_chesscha
   var bf = this$3.ReusableCBFInstance$2;
   var pieces = $as_sc_SeqLike($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$4, f, bf)).toSeq__sc_Seq();
   var dim = new $c_s_Tuple2$mcII$sp().init___I__I(conf.dimM$1, conf.dimN$1);
-  return new $c_Lorg_sarrufat_chesschallenge_Solver2().init___T2__sc_Seq(dim, pieces)
+  var sol = new $c_Lorg_sarrufat_chesschallenge_Solver2().init___T2__sc_Seq(dim, pieces);
+  sol.optimisePermutations$1 = conf.permOpt$1;
+  return sol
 });
 var $d_Lorg_sarrufat_chesschallenge_Solver2$ = new $TypeData().initClass({
   Lorg_sarrufat_chesschallenge_Solver2$: 0
@@ -11887,7 +11893,8 @@ var $c_Lchess_webapp_ResultInfo = (function() {
   $c_O.call(this);
   this.config$1 = null;
   this.ellapsed$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
-  this.results$1 = null
+  this.results$1 = null;
+  this.iterations$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong()
 });
 $c_Lchess_webapp_ResultInfo.prototype = new $h_O();
 $c_Lchess_webapp_ResultInfo.prototype.constructor = $c_Lchess_webapp_ResultInfo;
@@ -11899,17 +11906,11 @@ $h_Lchess_webapp_ResultInfo.prototype = $c_Lchess_webapp_ResultInfo.prototype;
 $c_Lchess_webapp_ResultInfo.prototype.productPrefix__T = (function() {
   return "ResultInfo"
 });
+$c_Lchess_webapp_ResultInfo.prototype.productArity__I = (function() {
+  return 4
+});
 $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$strMessage__O = (function() {
   return this.strMessage__T()
-});
-$c_Lchess_webapp_ResultInfo.prototype.productArity__I = (function() {
-  return 3
-});
-$c_Lchess_webapp_ResultInfo.prototype.init___Lorg_sarrufat_chesschallenge_Config__J__sci_List = (function(config, ellapsed, results) {
-  this.config$1 = config;
-  this.ellapsed$1 = ellapsed;
-  this.results$1 = results;
-  return this
 });
 $c_Lchess_webapp_ResultInfo.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
@@ -11921,7 +11922,12 @@ $c_Lchess_webapp_ResultInfo.prototype.equals__O__Z = (function(x$1) {
     if ((((x === null) ? (x$2 === null) : x.equals__O__Z(x$2)) && this.ellapsed$1.equals__sjsr_RuntimeLong__Z(ResultInfo$1.ellapsed$1))) {
       var x$3 = this.results$1;
       var x$4 = ResultInfo$1.results$1;
-      return ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+      var jsx$1 = ((x$3 === null) ? (x$4 === null) : x$3.equals__O__Z(x$4))
+    } else {
+      var jsx$1 = false
+    };
+    if (jsx$1) {
+      return this.iterations$1.equals__sjsr_RuntimeLong__Z(ResultInfo$1.iterations$1)
     } else {
       return false
     }
@@ -11943,18 +11949,25 @@ $c_Lchess_webapp_ResultInfo.prototype.productElement__I__O = (function(x$1) {
       return this.results$1;
       break
     }
+    case 3: {
+      return this.iterations$1;
+      break
+    }
     default: {
       throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
     }
   }
 });
+$c_Lchess_webapp_ResultInfo.prototype.strMessage__T = (function() {
+  var jsx$1 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array([" Found ", " in ", " and ", " Iterations for ", "X", " board with ", ""]));
+  var this$1 = this.results$1;
+  return jsx$1.s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$s_sc_LinearSeqOptimized$class__length__sc_LinearSeqOptimized__I(this$1), this.ellapsedFMT__p1__T(), this.iterations$1, this.config$1.dimM$1, this.config$1.dimN$1, this.verbosePieces__p1__T()]))
+});
 $c_Lchess_webapp_ResultInfo.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
-$c_Lchess_webapp_ResultInfo.prototype.strMessage__T = (function() {
-  var jsx$1 = new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array([" Found ", " in ", " for ", "X", " board with ", ""]));
-  var this$1 = this.results$1;
-  return jsx$1.s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([$s_sc_LinearSeqOptimized$class__length__sc_LinearSeqOptimized__I(this$1), this.ellapsedFMT__p1__T(), this.config$1.dimM$1, this.config$1.dimN$1, this.verbosePieces__p1__T()]))
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$iterations__O = (function() {
+  return this.iterations$1
 });
 $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$click__O = (function() {
   this.click__V()
@@ -11962,12 +11975,12 @@ $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$click__O = (function() 
 $c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$results__O = (function() {
   return this.results$1
 });
-$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$config__O = (function() {
-  return this.config$1
-});
 $c_Lchess_webapp_ResultInfo.prototype.ellapsedFMT__p1__T = (function() {
   var x1 = this.ellapsed$1;
   return (x1.$$less__sjsr_RuntimeLong__Z(new $c_sjsr_RuntimeLong().init___I__I__I(5000, 0, 0)) ? new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", " msecs."])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.ellapsed$1])) : new $c_s_StringContext().init___sc_Seq(new $c_sjs_js_WrappedArray().init___sjs_js_Array(["", " secs."])).s__sc_Seq__T(new $c_sjs_js_WrappedArray().init___sjs_js_Array([this.ellapsed$1.$$div__sjsr_RuntimeLong__sjsr_RuntimeLong(new $c_sjsr_RuntimeLong().init___I__I__I(1000, 0, 0))])))
+});
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$config__O = (function() {
+  return this.config$1
 });
 $c_Lchess_webapp_ResultInfo.prototype.jsResults__sjs_js_Array = (function() {
   var col = this.results$1;
@@ -12001,9 +12014,6 @@ $c_Lchess_webapp_ResultInfo.prototype.click__V = (function() {
     $as_Ljava_io_PrintStream(this$5.tl$1.get__O()).println__O__V(x)
   }
 });
-$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$ellapsed__O = (function() {
-  return this.ellapsed$1
-});
 $c_Lchess_webapp_ResultInfo.prototype.verbosePieces__p1__T = (function() {
   var array = [new $c_T2().init___O__O("K", "Kings"), new $c_T2().init___O__O("Q", "Queens"), new $c_T2().init___O__O("B", "Bishops"), new $c_T2().init___O__O("R", "Rooks"), new $c_T2().init___O__O("N", "Knights")];
   var this$12 = new $c_scm_MapBuilder().init___sc_GenMap($m_sci_Map$EmptyMap$());
@@ -12025,20 +12035,31 @@ $c_Lchess_webapp_ResultInfo.prototype.verbosePieces__p1__T = (function() {
   })(names));
   var this$13 = $m_sci_Iterable$();
   var bf = this$13.ReusableCBFInstance$2;
-  return $as_sc_TraversableOnce($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$14, f, bf)).mkString__T__T(" and ")
+  return $as_sc_TraversableOnce($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$14, f, bf)).mkString__T__T(", ")
+});
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$prop$ellapsed__O = (function() {
+  return this.ellapsed$1
+});
+$c_Lchess_webapp_ResultInfo.prototype.init___Lorg_sarrufat_chesschallenge_Config__J__sci_List__J = (function(config, ellapsed, results, iterations) {
+  this.config$1 = config;
+  this.ellapsed$1 = ellapsed;
+  this.results$1 = results;
+  this.iterations$1 = iterations;
+  return this
 });
 $c_Lchess_webapp_ResultInfo.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.config$1));
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().longHash__J__I(this.ellapsed$1));
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.results$1));
-  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 3)
-});
-$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$jsResults__O = (function() {
-  return this.jsResults__sjs_js_Array()
+  acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().longHash__J__I(this.iterations$1));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 4)
 });
 $c_Lchess_webapp_ResultInfo.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
+});
+$c_Lchess_webapp_ResultInfo.prototype.$$js$exported$meth$jsResults__O = (function() {
+  return this.jsResults__sjs_js_Array()
 });
 Object["defineProperty"]($c_Lchess_webapp_ResultInfo.prototype, "config", {
   "get": (function() {
@@ -12055,6 +12076,12 @@ Object["defineProperty"]($c_Lchess_webapp_ResultInfo.prototype, "ellapsed", {
 Object["defineProperty"]($c_Lchess_webapp_ResultInfo.prototype, "results", {
   "get": (function() {
     return this.$$js$exported$prop$results__O()
+  }),
+  "enumerable": true
+});
+Object["defineProperty"]($c_Lchess_webapp_ResultInfo.prototype, "iterations", {
+  "get": (function() {
+    return this.$$js$exported$prop$iterations__O()
   }),
   "enumerable": true
 });
@@ -12824,7 +12851,8 @@ var $c_Lorg_sarrufat_chesschallenge_Config = (function() {
   this.dimN$1 = 0;
   this.pieces$1 = null;
   this.printResult$1 = false;
-  this.timing$1 = false
+  this.timing$1 = false;
+  this.permOpt$1 = false
 });
 $c_Lorg_sarrufat_chesschallenge_Config.prototype = new $h_O();
 $c_Lorg_sarrufat_chesschallenge_Config.prototype.constructor = $c_Lorg_sarrufat_chesschallenge_Config;
@@ -12837,7 +12865,7 @@ $c_Lorg_sarrufat_chesschallenge_Config.prototype.productPrefix__T = (function() 
   return "Config"
 });
 $c_Lorg_sarrufat_chesschallenge_Config.prototype.productArity__I = (function() {
-  return 5
+  return 6
 });
 $c_Lorg_sarrufat_chesschallenge_Config.prototype.equals__O__Z = (function(x$1) {
   if ((this === x$1)) {
@@ -12851,8 +12879,8 @@ $c_Lorg_sarrufat_chesschallenge_Config.prototype.equals__O__Z = (function(x$1) {
     } else {
       var jsx$1 = false
     };
-    if ((jsx$1 && (this.printResult$1 === Config$1.printResult$1))) {
-      return (this.timing$1 === Config$1.timing$1)
+    if (((jsx$1 && (this.printResult$1 === Config$1.printResult$1)) && (this.timing$1 === Config$1.timing$1))) {
+      return (this.permOpt$1 === Config$1.permOpt$1)
     } else {
       return false
     }
@@ -12882,21 +12910,26 @@ $c_Lorg_sarrufat_chesschallenge_Config.prototype.productElement__I__O = (functio
       return this.timing$1;
       break
     }
+    case 5: {
+      return this.permOpt$1;
+      break
+    }
     default: {
       throw new $c_jl_IndexOutOfBoundsException().init___T(("" + x$1))
     }
   }
 });
-$c_Lorg_sarrufat_chesschallenge_Config.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
-});
-$c_Lorg_sarrufat_chesschallenge_Config.prototype.init___I__I__sci_Map__Z__Z = (function(dimM, dimN, pieces, printResult, timing) {
+$c_Lorg_sarrufat_chesschallenge_Config.prototype.init___I__I__sci_Map__Z__Z__Z = (function(dimM, dimN, pieces, printResult, timing, permOpt) {
   this.dimM$1 = dimM;
   this.dimN$1 = dimN;
   this.pieces$1 = pieces;
   this.printResult$1 = printResult;
   this.timing$1 = timing;
+  this.permOpt$1 = permOpt;
   return this
+});
+$c_Lorg_sarrufat_chesschallenge_Config.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$().$$undtoString__s_Product__T(this)
 });
 $c_Lorg_sarrufat_chesschallenge_Config.prototype.hashCode__I = (function() {
   var acc = (-889275714);
@@ -12905,7 +12938,8 @@ $c_Lorg_sarrufat_chesschallenge_Config.prototype.hashCode__I = (function() {
   acc = $m_sr_Statics$().mix__I__I__I(acc, $m_sr_Statics$().anyHash__O__I(this.pieces$1));
   acc = $m_sr_Statics$().mix__I__I__I(acc, (this.printResult$1 ? 1231 : 1237));
   acc = $m_sr_Statics$().mix__I__I__I(acc, (this.timing$1 ? 1231 : 1237));
-  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 5)
+  acc = $m_sr_Statics$().mix__I__I__I(acc, (this.permOpt$1 ? 1231 : 1237));
+  return $m_sr_Statics$().finalizeHash__I__I__I(acc, 6)
 });
 $c_Lorg_sarrufat_chesschallenge_Config.prototype.productIterator__sc_Iterator = (function() {
   return new $c_sr_ScalaRunTime$$anon$1().init___s_Product(this)
@@ -15797,7 +15831,7 @@ $c_Lorg_sarrufat_chesschallenge_Solver2$$anonfun$org$sarrufat$chesschallenge$Sol
   var this$5 = this.$$outer$3.resPos$1$f;
   var lastPos = $as_T2($s_sc_LinearSeqOptimized$class__last__sc_LinearSeqOptimized__O(this$5));
   var idxlp = this.$$outer$3.$$outer$3.org$sarrufat$chesschallenge$Solver2$$posToIndex$1__T2__I($as_T2(lastPos.$$und1__O()));
-  if (((lastPos.$$und2$mcC$sp__C() !== k) || (idx > idxlp))) {
+  if ((((!this.$$outer$3.$$outer$3.optimisePermutations$1) || (lastPos.$$und2$mcC$sp__C() !== k)) || (idx > idxlp))) {
     var thrK = $as_sci_Vector($as_sci_Vector(this.$$outer$3.$$outer$3.org$sarrufat$chesschallenge$Solver2$$threateningVectors__sci_Map().get__O__s_Option(new $c_jl_Character().init___C(k)).get__O()).apply__I__O(idx));
     var this$9 = this.$$outer$3.resPos$1$f;
     var f = (function(x$2$2) {
@@ -17688,6 +17722,9 @@ var $h_Lchess_webapp_ChessController$ = (function() {
   /*<skip>*/
 });
 $h_Lchess_webapp_ChessController$.prototype = $c_Lchess_webapp_ChessController$.prototype;
+$c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$cleanRes__O = (function() {
+  this.cleanRes__V()
+});
 $c_Lchess_webapp_ChessController$.prototype.init___ = (function() {
   $n_Lchess_webapp_ChessController$ = this;
   $s_Lcom_greencatsoft_angularjs_Named$class__$$init$__Lcom_greencatsoft_angularjs_Named__V(this);
@@ -17695,7 +17732,10 @@ $c_Lchess_webapp_ChessController$.prototype.init___ = (function() {
   this.controlScope$1 = $m_s_None$();
   return this
 });
-$c_Lchess_webapp_ChessController$.prototype.chess$webapp$ChessController$$internalCalc__V = (function() {
+$c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$calculate__O = (function() {
+  this.calculate__V()
+});
+$c_Lchess_webapp_ChessController$.prototype.chess$webapp$ChessController$$internalCalc__Z__V = (function(permOpt) {
   var this$1 = this.controlScope$1;
   if ((!this$1.isEmpty__Z())) {
     var arg1 = this$1.get__O();
@@ -17717,15 +17757,14 @@ $c_Lchess_webapp_ChessController$.prototype.chess$webapp$ChessController$$intern
       if ((x1 !== null)) {
         var x = x1.$$und1$mcI$sp__I();
         var y = x1.$$und2$mcI$sp__I();
-        $m_Lchess_webapp_ChessController$().service$1.solveAsync__Lorg_sarrufat_chesschallenge_Config__Lchess_webapp_ControllerData__V(new $c_Lorg_sarrufat_chesschallenge_Config().init___I__I__sci_Map__Z__Z(x, y, $m_Lchess_webapp_ChessController$().chess$webapp$ChessController$$getPieces$1__Lchess_webapp_ControllerData__sci_Map(arg1), false, false), arg1);
+        var jsx$1 = $m_Lchess_webapp_ChessController$().service$1;
+        var x$5 = $m_Lchess_webapp_ChessController$().chess$webapp$ChessController$$getPieces$1__Lchess_webapp_ControllerData__sci_Map(arg1);
+        jsx$1.solveAsync__Lorg_sarrufat_chesschallenge_Config__Lchess_webapp_ControllerData__V(new $c_Lorg_sarrufat_chesschallenge_Config().init___I__I__sci_Map__Z__Z__Z(x, y, x$5, false, false, permOpt), arg1);
         break matchEnd7
       };
       throw new $c_s_MatchError().init___O(x1)
     }
   }
-});
-$c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$calculate__O = (function() {
-  this.calculate__V()
 });
 $c_Lchess_webapp_ChessController$.prototype.$$js$exported$prop$service__O = (function() {
   return this.service$1
@@ -17736,12 +17775,18 @@ $c_Lchess_webapp_ChessController$.prototype.$$js$exported$prop$controlScope__s_O
 $c_Lchess_webapp_ChessController$.prototype.com$greencatsoft$angularjs$Named$$undsetter$und$name$und$eq__T__V = (function(x$1) {
   this.name$1 = x$1
 });
+$c_Lchess_webapp_ChessController$.prototype.cleanRes__V = (function() {
+  this.scope$1["resInfo"] = []
+});
 $c_Lchess_webapp_ChessController$.prototype.initialize__Lchess_webapp_ControllerData__V = (function(scope) {
   scope["boardT"] = "4x4";
   scope["pieces"] = [new $c_Lchess_webapp_PieceModel().init___T("Kings"), new $c_Lchess_webapp_PieceModel().init___T("Queens"), new $c_Lchess_webapp_PieceModel().init___T("Bishops"), new $c_Lchess_webapp_PieceModel().init___T("Rooks"), new $c_Lchess_webapp_PieceModel().init___T("Knights")];
   scope["count"] = 0;
   scope["calculate"] = (function() {
     $m_Lchess_webapp_ChessController$().calculate__V()
+  });
+  scope["cleanRes"] = (function() {
+    $m_Lchess_webapp_ChessController$().cleanRes__V()
   });
   scope["closeAlert"] = (function(scope$1) {
     return (function(idx$2) {
@@ -17752,9 +17797,7 @@ $c_Lchess_webapp_ChessController$.prototype.initialize__Lchess_webapp_Controller
   scope["alerts"] = [];
   scope["resInfo"] = [];
   this.controlScope$1 = new $c_s_Some().init___O(scope);
-  var this$2 = $m_s_Console$();
-  var this$3 = this$2.outVar$2;
-  $as_Ljava_io_PrintStream(this$3.tl$1.get__O()).println__O__V("initialize")
+  scope["permOpt"] = true
 });
 $c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$initialize__Lchess_webapp_ControllerData__O = (function(scope) {
   this.initialize__Lchess_webapp_ControllerData__V(scope)
@@ -17788,7 +17831,7 @@ $c_Lchess_webapp_ChessController$.prototype.calculate__V = (function() {
       var elem = new $c_Lchess_webapp_Alert().init___T__T("warning", "You must select one or more pieces");
       array$1["push"](elem)
     } else if ((!x1)) {
-      $m_Lchess_webapp_ChessController$().chess$webapp$ChessController$$internalCalc__V()
+      $m_Lchess_webapp_ChessController$().chess$webapp$ChessController$$internalCalc__Z__V($uZ(v1["permOpt"]))
     } else {
       throw new $c_s_MatchError().init___O(x1)
     }
@@ -17884,6 +17927,9 @@ $c_Lchess_webapp_ChessController$.prototype["initialize"] = (function(arg$1) {
 });
 $c_Lchess_webapp_ChessController$.prototype["calculate"] = (function() {
   return this.$$js$exported$meth$calculate__O()
+});
+$c_Lchess_webapp_ChessController$.prototype["cleanRes"] = (function() {
+  return this.$$js$exported$meth$cleanRes__O()
 });
 var $d_Lchess_webapp_ChessController$ = new $TypeData().initClass({
   Lchess_webapp_ChessController$: 0

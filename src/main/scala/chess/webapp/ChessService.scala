@@ -12,7 +12,7 @@ class ChessService {
   def solveAsync(conf: Config, scope: ControllerData): Unit = {
     val solver = Solver2(conf)
     val future = Future { solver.solve }
-    for { results ← future } { scope.resInfo += ResultInfo(conf, solver.elepasedTimeMS, results); scope.$apply() }
+    for { results ← future } { scope.resInfo += ResultInfo(conf, solver.elepasedTimeMS, results, solver.iterations); scope.$apply() }
   }
 }
 

@@ -4,7 +4,7 @@ package org.sarrufat.chesschallenge
  * Configuration class
  *
  */
-case class Config(dimM: Int = 4, dimN: Int = 4, pieces: Map[String, Int] = Map().empty, printResult: Boolean = false, timing: Boolean = false)
+case class Config(dimM: Int = 4, dimN: Int = 4, pieces: Map[String, Int] = Map().empty, printResult: Boolean = false, timing: Boolean = false, permOpt: Boolean = true)
 /**
  * Options for parsing args. I'm using scopt, a little command line options parsing library.
  *

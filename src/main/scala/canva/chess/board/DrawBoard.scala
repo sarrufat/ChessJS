@@ -9,7 +9,8 @@ import org.scalajs.dom.ext.Image
 import org.scalajs.dom.raw.HTMLImageElement
 
 object DrawBoard {
-  lazy val image = dom.document.createElement("img").asInstanceOf[HTMLImageElement]
+  lazy val image = dom.document.getElementById("piecesImg").asInstanceOf[HTMLImageElement]
+
   def apply(canvas: Canvas, res: ResultPositions, dim: Dimension) = {
     //    def posToIndex(pos: Pos) = pos._1 * dim._2 + pos._2
     val ctx = canvas.getContext("2d").asInstanceOf[CanvasRenderingContext2D]
@@ -27,7 +28,7 @@ object DrawBoard {
     }
     def drawPieces = {
       val pOrder = Array('P', 'R', 'N', 'B', 'Q', 'K').toSeq
-      image.src = "img/pieces.png"
+
       for (pos ← res) {
         val delta = pOrder.indexOf(pos._2) * 50
         val canvasOffsetX = pos._1._1 * BLOCK_SIZE

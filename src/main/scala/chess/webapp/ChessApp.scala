@@ -48,15 +48,17 @@ trait ControllerData extends Scope {
   var alerts: js.Array[Alert] = js.native
   var resInfo: js.Array[ResultInfo] = js.native
   var currResultInfo: ResultInfo = js.native
+  var cleanRes: js.Function = js.native
+  var permOpt: Boolean = js.native
 }
 
 @JSExportAll
 case class Alert(val atype: String, val msg: String)
 @JSExportAll
-case class ResultInfo(val config: Config, val ellapsed: Long, val results: Results) {
+case class ResultInfo(val config: Config, val ellapsed: Long, val results: Results, val iterations: Long) {
   private def verbosePieces = {
     val names = Map("K" -> "Kings", "Q" -> "Queens", "B" -> "Bishops", "R" -> "Rooks", "N" -> "Knights")
-    config.pieces.map { p ⇒ p._2 + s" ${names.get(p._1).get} " } mkString (" and ")
+    config.pieces.map { p ⇒ p._2 + s" ${names.get(p._1).get} " } mkString (", ")
   }
 
   private def ellapsedFMT = ellapsed match {
@@ -64,7 +66,7 @@ case class ResultInfo(val config: Config, val ellapsed: Long, val results: Resul
     case x                ⇒ s"${ellapsed / 1000} secs."
   }
 
-  def strMessage() = s" Found ${results.length} in $ellapsedFMT for ${config.dimM}X${config.dimN} board with ${verbosePieces}"
+  def strMessage() = s" Found ${results.length} in $ellapsedFMT and $iterations Iterations for ${config.dimM}X${config.dimN} board with ${verbosePieces}"
   def jsResults() = js.Array(results: _*)
   def click() = ChessController.controlScope.foreach { scope ⇒ scope.currResultInfo = this; println("click  " + results.length) }
 }
@@ -89,14 +91,15 @@ object ChessController extends Controller {
     scope.pieces = js.Array(PieceModel("Kings"), PieceModel("Queens"), PieceModel("Bishops"), PieceModel("Rooks"), PieceModel("Knights"))
     scope.count = 0
     scope.calculate = () ⇒ calculate()
+    scope.cleanRes = () ⇒ cleanRes()
     scope.closeAlert = (idx: Int) ⇒ { scope.alerts = js.Array() }
     scope.alerts = js.Array()
     scope.resInfo = js.Array()
     controlScope = Some(scope)
-    println("initialize")
+    scope.permOpt = true
   }
 
-  private def internalCalc() = {
+  private def internalCalc(permOpt: Boolean) = {
     def getBoard(scope: ScopeType) = {
       scope.boardT.split('x') match {
         case Array(x, y) ⇒ (x.toInt, y.toInt)
@@ -112,7 +115,7 @@ object ChessController extends Controller {
     controlScope.foreach { scope ⇒
       getBoard(scope) match {
         case (0, 0) ⇒ scope.alerts += Alert("error", "Internal error")
-        case (x, y) ⇒ service solveAsync (Config(x, y, getPieces(scope)), scope)
+        case (x, y) ⇒ service solveAsync (Config(x, y, getPieces(scope), permOpt = permOpt), scope)
       }
     }
   }
@@ -122,8 +125,9 @@ object ChessController extends Controller {
     controlScope.foreach { scope ⇒
       scope.pieces.forall { p ⇒ !p.checked } match {
         case true  ⇒ scope.alerts += Alert("warning", "You must select one or more pieces")
-        case false ⇒ internalCalc()
+        case false ⇒ internalCalc(scope.permOpt)
       }
     }
   }
+  def cleanRes(): Unit = { scope.resInfo = js.Array() }
 }

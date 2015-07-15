@@ -14,6 +14,7 @@
     <!-- Include JavaScript dependencies -->
     <script type="text/javascript" src="./target/scala-2.11/chesschallengejs-jsdeps.js"></script>
     <script type="text/javascript" src="./target/scala-2.11/chesschallengejs-launcher.js"></script>
+    <img id="piecesImg" src="img/pieces.png" hidden="true">
     <div class="row">
         <div class="ssmall-30 columns">
             <h1>Welcome to Chess Challenge</h1>
@@ -48,8 +49,8 @@
                         <li>
                             <div class="switch small round">
                                 <p>{{p.label}}</p>
-                                <label> <input id="piece{{$index}}" type="checkbox" ng-model="p.checked">
-                                </label>
+                                <input id="piece{{$index}}" type="checkbox" ng-model="p.checked">
+                                <label for="piece{{$index}}"></label>
                             </div>
                         </li>
                         <li>
@@ -61,9 +62,16 @@
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="switch small">
+                <p><span class="label">Permutation Optimization</span></p>
+                 <input id="optPerm" type="checkbox" ng-model="permOpt">
+                <label for="optPerm"></label>
+            </div>
+        </div>
         <div class="row">
             <button type="button" class="small round" ng-click="calculate()">Calculate</button>
+            <button type="button" class="small round" ng-click="cleanRes()" ng-show="resInfo.length > 0">Clean Results</button>
         </div>
         <div class="small-5 columns">
             <alert ng-repeat="alert in alerts" type="alert.atype" class="round" close="closeAlert($index)">{{alert.msg}}</alert>
@@ -71,10 +79,9 @@
         <div class="row">
             <div ng-show="resInfo.length > 0">
                 <alert ng-repeat="res in resInfo" type="success" class="round" ng-click="res.click()">{{res.strMessage()}}</alert>
-                <span ng-repeat="results in currResultInfo.jsResults()">
-                    <span ng-if="!$index%2">
+                <span ng-repeat="results in currResultInfo.jsResults()"> <span ng-if="!$index%2">
                         <div class="row"></div>
-                    </span>
+                </span>
                     <canvas id="board_{{$index}}" width="200" height="200" board="results"></canvas>
                 </span>
             </div>
