@@ -1,0 +1,12 @@
+/bin/
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.scala-ide.sdt.core.prefs
+project/
+target/.history
+target/resolution-cache/
+.cache-main
+.classpath
+.project
+target/streams/
+target/scala-2.11/classes/
