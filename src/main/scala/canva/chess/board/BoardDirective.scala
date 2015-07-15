@@ -19,11 +19,11 @@ object BoardDirective extends AttributeDirective {
   import chess.webapp.ControllerData
   override val name = "board"
   override def link(scope: ScopeType, elems: Seq[Element], attrs: Attributes, controllers: Controller*) = {
-    println("board")
+
     elems.headOption.map { _.asInstanceOf[org.scalajs.dom.html.Canvas] } foreach { x ⇒
-      println(x.getAttribute("board"))
+
       val cd = scope.asInstanceOf[ControllerData]
-      scope.$watch(attrs(name), (newval: UndefOr[js.Any]) ⇒ { println("$watch " + newval); DrawBoard(x, newval.asInstanceOf[ResultPositions], (cd.currResultInfo.config.dimM, cd.currResultInfo.config.dimN)) })
+      scope.$watch(attrs(name), (newval: UndefOr[js.Any]) ⇒ { DrawBoard(x, newval.asInstanceOf[ResultPositions], (cd.currResultInfo.config.dimM, cd.currResultInfo.config.dimN)) })
     }
   }
 }

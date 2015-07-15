@@ -1535,7 +1535,8 @@ var $c_Lorg_sarrufat_chesschallenge_Solver2 = (function() {
   $c_O.call(this);
   this.org$sarrufat$chesschallenge$Solver2$$dimension$f = null;
   this.pieces$1 = null;
-  this.optimisePermutations$1 = false;
+  this.optimizePermutations$1 = false;
+  this.optimizeShortPath$1 = false;
   this.seqPieces$1 = null;
   this.elepasedTimeMS$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
   this.iterations$1 = $m_sjsr_RuntimeLong$().Zero__sjsr_RuntimeLong();
@@ -1692,7 +1693,8 @@ $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.org$sarrufat$chesschallenge$So
 $c_Lorg_sarrufat_chesschallenge_Solver2.prototype.init___T2__sc_Seq = (function(dimension, pieces) {
   this.org$sarrufat$chesschallenge$Solver2$$dimension$f = dimension;
   this.pieces$1 = pieces;
-  this.optimisePermutations$1 = true;
+  this.optimizePermutations$1 = true;
+  this.optimizeShortPath$1 = true;
   var jsx$1 = new $c_Lorg_sarrufat_chesschallenge_Solver2$$anonfun$1().init___Lorg_sarrufat_chesschallenge_Solver2(this);
   var this$1 = $m_sc_Seq$();
   var this$2 = $as_sc_TraversableOnce(pieces.flatMap__F1__scg_CanBuildFrom__O(jsx$1, this$1.ReusableCBFInstance$2)).toList__sci_List();
@@ -1804,7 +1806,7 @@ $c_Lorg_sarrufat_chesschallenge_Solver2$.prototype.apply__Lorg_sarrufat_chesscha
   var pieces = $as_sc_SeqLike($s_sc_TraversableLike$class__map__sc_TraversableLike__F1__scg_CanBuildFrom__O(this$4, f, bf)).toSeq__sc_Seq();
   var dim = new $c_s_Tuple2$mcII$sp().init___I__I(conf.dimM$1, conf.dimN$1);
   var sol = new $c_Lorg_sarrufat_chesschallenge_Solver2().init___T2__sc_Seq(dim, pieces);
-  sol.optimisePermutations$1 = conf.permOpt$1;
+  sol.optimizePermutations$1 = conf.permOpt$1;
   return sol
 });
 var $d_Lorg_sarrufat_chesschallenge_Solver2$ = new $TypeData().initClass({
@@ -12006,12 +12008,7 @@ $c_Lchess_webapp_ResultInfo.prototype.click__V = (function() {
   var this$1 = $m_Lchess_webapp_ChessController$().controlScope$1;
   if ((!this$1.isEmpty__Z())) {
     var arg1 = this$1.get__O();
-    arg1["currResultInfo"] = this;
-    var this$2 = this.results$1;
-    var x = ("click  " + $s_sc_LinearSeqOptimized$class__length__sc_LinearSeqOptimized__I(this$2));
-    var this$4 = $m_s_Console$();
-    var this$5 = this$4.outVar$2;
-    $as_Ljava_io_PrintStream(this$5.tl$1.get__O()).println__O__V(x)
+    arg1["currResultInfo"] = this
   }
 });
 $c_Lchess_webapp_ResultInfo.prototype.verbosePieces__p1__T = (function() {
@@ -12188,17 +12185,10 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
         };
         var scope$1 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
         var elems$1 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
-        var this$15 = $m_s_Console$();
-        var this$16 = this$15.outVar$2;
-        $as_Ljava_io_PrintStream(this$16.tl$1.get__O()).println__O__V("board");
-        var this$17 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$1);
-        var this$18 = (this$17.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$17.get__O()));
-        if ((!this$18.isEmpty__Z())) {
-          var v1 = this$18.get__O();
-          var x = $as_T(v1["getAttribute"]("board"));
-          var this$20 = $m_s_Console$();
-          var this$21 = this$20.outVar$2;
-          $as_Ljava_io_PrintStream(this$21.tl$1.get__O()).println__O__V(x);
+        var this$14 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$1);
+        var this$15 = (this$14.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$14.get__O()));
+        if ((!this$15.isEmpty__Z())) {
+          var v1 = this$15.get__O();
           var value = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
           if ((value === (void 0))) {
             var jsx$1 = (void 0)
@@ -12208,11 +12198,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
           };
           scope$1["$watch"](jsx$1, (function(cd$1, x$2) {
             return (function(newval$2) {
-              var x$1 = ("$watch " + newval$2);
-              var this$28 = $m_s_Console$();
-              var this$29 = this$28.outVar$2;
-              $as_Ljava_io_PrintStream(this$29.tl$1.get__O()).println__O__V(x$1);
-              var this$30 = $m_Lcanva_chess_board_DrawBoard$();
+              var this$21 = $m_Lcanva_chess_board_DrawBoard$();
               var res = $as_sci_List(newval$2);
               var _1$mcI$sp = $as_Lchess_webapp_ResultInfo(cd$1["currResultInfo"]).config$1.dimM$1;
               var _2$mcI$sp = $as_Lchess_webapp_ResultInfo(cd$1["currResultInfo"]).config$1.dimN$1;
@@ -12229,7 +12215,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               var i$2 = 0;
               var count = 0;
               while ((i$2 !== terminalElement$4)) {
-                var x$3 = i$2;
+                var x = i$2;
                 var isEmpty$4$1 = (_2$mcI$sp <= 0);
                 var numRangeElements$4$1 = (isEmpty$4$1 ? 0 : _2$mcI$sp);
                 var lastElement$4$1 = (isEmpty$4$1 ? (-1) : (((-1) + _2$mcI$sp) | 0));
@@ -12241,7 +12227,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
                 var count$1 = 0;
                 while ((i$3 !== terminalElement$4$1)) {
                   var v1$1 = i$3;
-                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$3, v1$1, ctx, 50);
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x, v1$1, ctx, 50);
                   count$1 = ((1 + count$1) | 0);
                   i$3 = ((1 + i$3) | 0)
                 };
@@ -12250,7 +12236,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               };
               ctx["lineWidth"] = 2.0;
               ctx["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp), $imul(50, _2$mcI$sp));
-              this$30.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res, ctx, 50)
+              this$21.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res, ctx, 50)
             })
           })(scope$1, v1))
         };
@@ -12266,17 +12252,10 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
         var scope$2 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
         var elems$2 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
         var array$2 = [arg];
-        var this$40 = $m_s_Console$();
-        var this$41 = this$40.outVar$2;
-        $as_Ljava_io_PrintStream(this$41.tl$1.get__O()).println__O__V("board");
-        var this$42 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$2);
-        var this$43 = (this$42.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$42.get__O()));
-        if ((!this$43.isEmpty__Z())) {
-          var v1$2 = this$43.get__O();
-          var x$4 = $as_T(v1$2["getAttribute"]("board"));
-          var this$45 = $m_s_Console$();
-          var this$46 = this$45.outVar$2;
-          $as_Ljava_io_PrintStream(this$46.tl$1.get__O()).println__O__V(x$4);
+        var this$30 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$2);
+        var this$31 = (this$30.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$30.get__O()));
+        if ((!this$31.isEmpty__Z())) {
+          var v1$2 = this$31.get__O();
           var value$2 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
           if ((value$2 === (void 0))) {
             var jsx$2 = (void 0)
@@ -12286,11 +12265,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
           };
           scope$2["$watch"](jsx$2, (function(cd$1$1, x$2$1) {
             return (function(newval$2$1) {
-              var x$5 = ("$watch " + newval$2$1);
-              var this$53 = $m_s_Console$();
-              var this$54 = this$53.outVar$2;
-              $as_Ljava_io_PrintStream(this$54.tl$1.get__O()).println__O__V(x$5);
-              var this$55 = $m_Lcanva_chess_board_DrawBoard$();
+              var this$37 = $m_Lcanva_chess_board_DrawBoard$();
               var res$1 = $as_sci_List(newval$2$1);
               var _1$mcI$sp$1 = $as_Lchess_webapp_ResultInfo(cd$1$1["currResultInfo"]).config$1.dimM$1;
               var _2$mcI$sp$1 = $as_Lchess_webapp_ResultInfo(cd$1$1["currResultInfo"]).config$1.dimN$1;
@@ -12307,7 +12282,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               var i$4 = 0;
               var count$2 = 0;
               while ((i$4 !== terminalElement$4$2)) {
-                var x$6 = i$4;
+                var x$1 = i$4;
                 var isEmpty$4$3 = (_2$mcI$sp$1 <= 0);
                 var numRangeElements$4$3 = (isEmpty$4$3 ? 0 : _2$mcI$sp$1);
                 var lastElement$4$3 = (isEmpty$4$3 ? (-1) : (((-1) + _2$mcI$sp$1) | 0));
@@ -12319,7 +12294,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
                 var count$3 = 0;
                 while ((i$5 !== terminalElement$4$3)) {
                   var v1$3 = i$5;
-                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$6, v1$3, ctx$1, 50);
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$1, v1$3, ctx$1, 50);
                   count$3 = ((1 + count$3) | 0);
                   i$5 = ((1 + i$5) | 0)
                 };
@@ -12328,7 +12303,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               };
               ctx$1["lineWidth"] = 2.0;
               ctx$1["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$1), $imul(50, _2$mcI$sp$1));
-              this$55.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$1, ctx$1, 50)
+              this$37.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$1, ctx$1, 50)
             })
           })(scope$2, v1$2))
         };
@@ -12337,17 +12312,10 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
         var scope$3 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
         var elems$3 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
         var array$3 = [];
-        var this$65 = $m_s_Console$();
-        var this$66 = this$65.outVar$2;
-        $as_Ljava_io_PrintStream(this$66.tl$1.get__O()).println__O__V("board");
-        var this$67 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$3);
-        var this$68 = (this$67.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$67.get__O()));
-        if ((!this$68.isEmpty__Z())) {
-          var v1$4 = this$68.get__O();
-          var x$7 = $as_T(v1$4["getAttribute"]("board"));
-          var this$70 = $m_s_Console$();
-          var this$71 = this$70.outVar$2;
-          $as_Ljava_io_PrintStream(this$71.tl$1.get__O()).println__O__V(x$7);
+        var this$46 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$3);
+        var this$47 = (this$46.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$46.get__O()));
+        if ((!this$47.isEmpty__Z())) {
+          var v1$4 = this$47.get__O();
           var value$4 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
           if ((value$4 === (void 0))) {
             var jsx$3 = (void 0)
@@ -12357,11 +12325,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
           };
           scope$3["$watch"](jsx$3, (function(cd$1$2, x$2$2) {
             return (function(newval$2$2) {
-              var x$8 = ("$watch " + newval$2$2);
-              var this$78 = $m_s_Console$();
-              var this$79 = this$78.outVar$2;
-              $as_Ljava_io_PrintStream(this$79.tl$1.get__O()).println__O__V(x$8);
-              var this$80 = $m_Lcanva_chess_board_DrawBoard$();
+              var this$53 = $m_Lcanva_chess_board_DrawBoard$();
               var res$2 = $as_sci_List(newval$2$2);
               var _1$mcI$sp$2 = $as_Lchess_webapp_ResultInfo(cd$1$2["currResultInfo"]).config$1.dimM$1;
               var _2$mcI$sp$2 = $as_Lchess_webapp_ResultInfo(cd$1$2["currResultInfo"]).config$1.dimN$1;
@@ -12378,7 +12342,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               var i$6 = 0;
               var count$4 = 0;
               while ((i$6 !== terminalElement$4$4)) {
-                var x$9 = i$6;
+                var x$3 = i$6;
                 var isEmpty$4$5 = (_2$mcI$sp$2 <= 0);
                 var numRangeElements$4$5 = (isEmpty$4$5 ? 0 : _2$mcI$sp$2);
                 var lastElement$4$5 = (isEmpty$4$5 ? (-1) : (((-1) + _2$mcI$sp$2) | 0));
@@ -12390,7 +12354,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
                 var count$5 = 0;
                 while ((i$7 !== terminalElement$4$5)) {
                   var v1$5 = i$7;
-                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$9, v1$5, ctx$2, 50);
+                  $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$3, v1$5, ctx$2, 50);
                   count$5 = ((1 + count$5) | 0);
                   i$7 = ((1 + i$7) | 0)
                 };
@@ -12399,29 +12363,22 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               };
               ctx$2["lineWidth"] = 2.0;
               ctx$2["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$2), $imul(50, _2$mcI$sp$2));
-              this$80.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$2, ctx$2, 50)
+              this$53.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$2, ctx$2, 50)
             })
           })(scope$3, v1$4))
         };
         break matchEnd7
       }
     };
-    var x$10 = $m_s_None$();
-    if ((x$10 === x1)) {
+    var x$4 = $m_s_None$();
+    if ((x$4 === x1)) {
       var scope$4 = $s_Lcom_greencatsoft_angularjs_Directive$class__bind$1__Lcom_greencatsoft_angularjs_Directive__Lcom_greencatsoft_angularjs_core_Scope__Lcom_greencatsoft_angularjs_core_Scope(this.$$outer$2, scope);
       var elems$4 = new $c_sjs_js_WrappedArray().init___sjs_js_Array(elems);
       var array$4 = [];
-      var this$90 = $m_s_Console$();
-      var this$91 = this$90.outVar$2;
-      $as_Ljava_io_PrintStream(this$91.tl$1.get__O()).println__O__V("board");
-      var this$92 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$4);
-      var this$93 = (this$92.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$92.get__O()));
-      if ((!this$93.isEmpty__Z())) {
-        var v1$6 = this$93.get__O();
-        var x$11 = $as_T(v1$6["getAttribute"]("board"));
-        var this$95 = $m_s_Console$();
-        var this$96 = this$95.outVar$2;
-        $as_Ljava_io_PrintStream(this$96.tl$1.get__O()).println__O__V(x$11);
+      var this$62 = $s_sc_TraversableLike$class__headOption__sc_TraversableLike__s_Option(elems$4);
+      var this$63 = (this$62.isEmpty__Z() ? $m_s_None$() : new $c_s_Some().init___O(this$62.get__O()));
+      if ((!this$63.isEmpty__Z())) {
+        var v1$6 = this$63.get__O();
         var value$6 = attrs[$m_Lcanva_chess_board_BoardDirective$().name$1];
         if ((value$6 === (void 0))) {
           var jsx$4 = (void 0)
@@ -12431,11 +12388,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
         };
         scope$4["$watch"](jsx$4, (function(cd$1$3, x$2$3) {
           return (function(newval$2$3) {
-            var x$12 = ("$watch " + newval$2$3);
-            var this$103 = $m_s_Console$();
-            var this$104 = this$103.outVar$2;
-            $as_Ljava_io_PrintStream(this$104.tl$1.get__O()).println__O__V(x$12);
-            var this$105 = $m_Lcanva_chess_board_DrawBoard$();
+            var this$69 = $m_Lcanva_chess_board_DrawBoard$();
             var res$3 = $as_sci_List(newval$2$3);
             var _1$mcI$sp$3 = $as_Lchess_webapp_ResultInfo(cd$1$3["currResultInfo"]).config$1.dimM$1;
             var _2$mcI$sp$3 = $as_Lchess_webapp_ResultInfo(cd$1$3["currResultInfo"]).config$1.dimN$1;
@@ -12452,7 +12405,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
             var i$8 = 0;
             var count$6 = 0;
             while ((i$8 !== terminalElement$4$6)) {
-              var x$13 = i$8;
+              var x$5 = i$8;
               var isEmpty$4$7 = (_2$mcI$sp$3 <= 0);
               var numRangeElements$4$7 = (isEmpty$4$7 ? 0 : _2$mcI$sp$3);
               var lastElement$4$7 = (isEmpty$4$7 ? (-1) : (((-1) + _2$mcI$sp$3) | 0));
@@ -12464,7 +12417,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
               var count$7 = 0;
               while ((i$9 !== terminalElement$4$7)) {
                 var v1$7 = i$9;
-                $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$13, v1$7, ctx$3, 50);
+                $m_Lcanva_chess_board_DrawBoard$().canva$chess$board$DrawBoard$$drawBlock$1__I__I__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(x$5, v1$7, ctx$3, 50);
                 count$7 = ((1 + count$7) | 0);
                 i$9 = ((1 + i$9) | 0)
               };
@@ -12473,7 +12426,7 @@ $c_Lcom_greencatsoft_angularjs_Directive$$anonfun$buildConfig$1.prototype.apply_
             };
             ctx$3["lineWidth"] = 2.0;
             ctx$3["strokeRect"](0.0, 0.0, $imul(50, _1$mcI$sp$3), $imul(50, _2$mcI$sp$3));
-            this$105.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$3, ctx$3, 50)
+            this$69.drawPieces$1__p1__sci_List__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__V(res$3, ctx$3, 50)
           })
         })(scope$4, v1$6))
       };
@@ -15831,7 +15784,7 @@ $c_Lorg_sarrufat_chesschallenge_Solver2$$anonfun$org$sarrufat$chesschallenge$Sol
   var this$5 = this.$$outer$3.resPos$1$f;
   var lastPos = $as_T2($s_sc_LinearSeqOptimized$class__last__sc_LinearSeqOptimized__O(this$5));
   var idxlp = this.$$outer$3.$$outer$3.org$sarrufat$chesschallenge$Solver2$$posToIndex$1__T2__I($as_T2(lastPos.$$und1__O()));
-  if ((((!this.$$outer$3.$$outer$3.optimisePermutations$1) || (lastPos.$$und2$mcC$sp__C() !== k)) || (idx > idxlp))) {
+  if ((((!this.$$outer$3.$$outer$3.optimizePermutations$1) || (lastPos.$$und2$mcC$sp__C() !== k)) || (idx > idxlp))) {
     var thrK = $as_sci_Vector($as_sci_Vector(this.$$outer$3.$$outer$3.org$sarrufat$chesschallenge$Solver2$$threateningVectors__sci_Map().get__O__s_Option(new $c_jl_Character().init___C(k)).get__O()).apply__I__O(idx));
     var this$9 = this.$$outer$3.resPos$1$f;
     var f = (function(x$2$2) {
@@ -17722,15 +17675,15 @@ var $h_Lchess_webapp_ChessController$ = (function() {
   /*<skip>*/
 });
 $h_Lchess_webapp_ChessController$.prototype = $c_Lchess_webapp_ChessController$.prototype;
-$c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$cleanRes__O = (function() {
-  this.cleanRes__V()
-});
 $c_Lchess_webapp_ChessController$.prototype.init___ = (function() {
   $n_Lchess_webapp_ChessController$ = this;
   $s_Lcom_greencatsoft_angularjs_Named$class__$$init$__Lcom_greencatsoft_angularjs_Named__V(this);
   this.service$1 = new $c_Lchess_webapp_ChessService().init___();
   this.controlScope$1 = $m_s_None$();
   return this
+});
+$c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$cleanRes__O = (function() {
+  this.cleanRes__V()
 });
 $c_Lchess_webapp_ChessController$.prototype.$$js$exported$meth$calculate__O = (function() {
   this.calculate__V()

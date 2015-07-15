@@ -68,7 +68,7 @@ case class ResultInfo(val config: Config, val ellapsed: Long, val results: Resul
 
   def strMessage() = s" Found ${results.length} in $ellapsedFMT and $iterations Iterations for ${config.dimM}X${config.dimN} board with ${verbosePieces}"
   def jsResults() = js.Array(results: _*)
-  def click() = ChessController.controlScope.foreach { scope ⇒ scope.currResultInfo = this; println("click  " + results.length) }
+  def click() = ChessController.controlScope.foreach { scope ⇒ scope.currResultInfo = this }
 }
 
 @JSExportAll

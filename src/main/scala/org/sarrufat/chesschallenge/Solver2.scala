@@ -9,7 +9,8 @@ import scala.annotation.elidable.ASSERTION
  */
 class Solver2(dimension: Dimension, pieces: Seq[PieceParam]) {
 
-  var optimisePermutations = true
+  var optimizePermutations = true
+  var optimizeShortPath = true
   val seqPieces = (for {
     p ← pieces
     n ← p._1 to 1 by -1
@@ -94,7 +95,7 @@ class Solver2(dimension: Dimension, pieces: Seq[PieceParam]) {
         // Index of last position
         val idxlp = posToIndex(lastPos._1)
         // Skip permutation if already calculated tree
-        if (!optimisePermutations || lastPos._2 != k || idx > idxlp) {
+        if (!optimizePermutations || lastPos._2 != k || idx > idxlp) {
           val thrK = threateningVectors.get(k).get(idx)
           // Verify bno threatenin
           val currTree = resPos.map(_._1)
@@ -158,7 +159,7 @@ object Solver2 {
   def apply(conf: Config): Solver2 = {
     val pieces = conf.pieces.toSeq.map(cp ⇒ (cp._2, cp._1.charAt(0))).toSeq
     var sol = apply((conf.dimM, conf.dimN))(pieces: _*)
-    sol.optimisePermutations = conf.permOpt
+    sol.optimizePermutations = conf.permOpt
     sol
   }
 }
